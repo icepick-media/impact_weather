@@ -1,0 +1,4 @@
+.env
+package.json
+composer.json
+/vendor
