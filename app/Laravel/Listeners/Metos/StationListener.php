@@ -44,8 +44,8 @@ class StationListener
 
                 $farm->remarks = "No nearby station found.";
                 if($station){
-                    $farm->station_id = $station->id
-                    $farm->remarks = "Nearby station found."
+                    $farm->station_id = $station->id;
+                    $farm->remarks = "Nearby station found.";
                 }
 
                 $farm->save();

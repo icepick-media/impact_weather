@@ -192,7 +192,7 @@ return [
         App\Providers\ResponseServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
-
+        L5Swagger\L5SwaggerServiceProvider::class,
 
     ],
 

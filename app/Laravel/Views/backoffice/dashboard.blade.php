@@ -79,37 +79,39 @@
 			                            </tr>
 			                        </thead>
 			                        <tbody>
-			                        	@foreach($journal as $index => $activity)
-			                        	<tr>
-			                        		<td>
-			                        			@if($activity->farm)
-			                        			<a href="{{route('backoffice.user.edit',[$activity->farm->user_id])}}">{{$activity->farm?($activity->farm->owner?$activity->farm->owner->name:"n/a"):"n/a"}}</a>
-			                        			@else
-			                        			n/a
-			                        			@endif
-			                        		</td>
-			                        		<td>
-			                        			<div><small>{{Str::upper(($activity->farm?$activity->farm->name:"n/a") .": ".($activity->farm?$activity->farm->crop_display:"n/a"))}}</small></div>
-			                        			@if($activity->farm)
-			                        			<div><small><a href="{{route('backoffice.user.farm',[$activity->farm->user_id,$activity->farm->id])}}">[View Farm Profile]</a></small></div>
-			                        			@endif
-			                        		</td>
-			                        		<td>
-			                        			@if($activity->farm)
-			                        			<a target="_blank" href="{{route('backoffice.station.edit',[$activity->farm->station_id])}}"><b>{{$activity->farm->station->code}}</b></a>
-			                        			@else
-			                        			n/a
-			                        			@endif
-			                        		</td>
-			                        		<td>
-			                        			<div><b>{{$activity->title}}</b></div>
-			                        			@if($activity->brand)
-			                        			<div><small>Brand : {{$activity->brand}}</small></div>
-			                        			@endif
-			                        			<div><small>Qty : {{$activity->qty}}</small></div>
-			                        		</td>
-			                        	</tr>
-			                        	@endforeach
+										@if(!$journal->isEmpty())
+											@foreach($journal as $index => $activity)
+											<tr>
+												<td>
+													@if($activity->farm)
+													<a href="{{route('backoffice.user.edit',[$activity->farm->user_id])}}">{{$activity->farm?($activity->farm->owner?$activity->farm->owner->name:"n/a"):"n/a"}}</a>
+													@else
+													n/a
+													@endif
+												</td>
+												<td>
+													<div><small>{{Str::upper(($activity->farm?$activity->farm->name:"n/a") .": ".($activity->farm?$activity->farm->crop_display:"n/a"))}}</small></div>
+													@if($activity->farm)
+													<div><small><a href="{{route('backoffice.user.farm',[$activity->farm->user_id,$activity->farm->id])}}">[View Farm Profile]</a></small></div>
+													@endif
+												</td>
+												<td>
+													@if($activity->farm)
+													<a target="_blank" href="{{route('backoffice.station.edit',[$activity->farm->station_id])}}"><b>{{$activity->farm->station->code}}</b></a>
+													@else
+													n/a
+													@endif
+												</td>
+												<td>
+													<div><b>{{$activity->title}}</b></div>
+													@if($activity->brand)
+													<div><small>Brand : {{$activity->brand}}</small></div>
+													@endif
+													<div><small>Qty : {{$activity->qty}}</small></div>
+												</td>
+											</tr>
+											@endforeach
+										@endif
 			                        </tbody>
 			                    </table>
 			                </div>
@@ -214,18 +216,20 @@
 <script src="/backoffice/robust-assets/js/components/pages/dashboard-analytics.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/components/pages/dashboard-project.js" type="text/javascript"></script>
 
-<script src="http://maps.google.com/maps/api/js?key={{  env("GOOGLE_MAP_KEY") }}" type="text/javascript"></script>
+<script src="http://maps.google.com/maps/api/js?key={{  env('GOOGLE_MAP_KEY') }}" type="text/javascript"></script>
 <script type="text/javascript">
   $(function(){
-      var locations = [
-            @foreach($stations as $index => $station )
-            ["{{"{$station->code} - {$station->name}"}} - No. of Farms: {{$station->num_farm}}",  {{$station->geo_lat}}, {{$station->geo_long}}, {{$station->id}}],
-            @endforeach
+      	var locations = [
+			$stations = {!! str_replace("'", "\'", json_encode($stations)) !!}
           ];
+		  console.log(locations);
 
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 9,
-            center: new google.maps.LatLng({{$stations[0]->geo_lat}}, {{$stations[0]->geo_long}}),
+			center: new google.maps.LatLng(
+				$stations.length > 0 ? $stations[0].geo_lat : 0, 
+				$stations.length > 0 ? $stations[0].geo_long : 0
+			),
             mapTypeId: google.maps.MapTypeId.ROADMAP
           });
 

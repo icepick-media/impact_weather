@@ -9,6 +9,7 @@
         "beberlei/azure-blob-storage": "*",
         "brozot/laravel-fcm": "^1.2",
         "cviebrock/eloquent-sluggable": "^4.2",
+        "darkaonline/l5-swagger": "5.4.*",
         "enniel/laravel-fcm-notification-channel": "^0.0.1",
         "fabpot/goutte": "^3.2",
         "geoip2/geoip2": "~2.0",
@@ -27,7 +28,8 @@
         "spinen/laravel-geometry": "^0.5.0",
         "squigg/azure-queue-laravel": "5.4.*",
         "torann/geoip": "^1.0",
-        "tymon/jwt-auth": "0.5.*"
+        "tymon/jwt-auth": "0.5.*",
+        "zircote/swagger-php": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

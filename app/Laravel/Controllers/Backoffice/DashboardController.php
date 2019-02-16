@@ -19,6 +19,9 @@ class DashboardController extends Controller
     	$this->data['customers'] = User::where('type','user')->orderBy('last_activity',"DESC")->get();
     	$this->data['stations'] = Station::get();
         $this->data['journal']  = Journal::whereRaw("DATE(created_at) = '{$this->data['date_today']}'")->orderBy('created_at')->get();
+        // echo "<pre>";
+        // print_r(!$this->data['customers']->isEmpty() ? $this->data['customers']->count() : 'Empty');
+        // exit;
     	return view('backoffice.dashboard', $this->data);
     }
 
