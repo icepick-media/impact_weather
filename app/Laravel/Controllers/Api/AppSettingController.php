@@ -19,6 +19,36 @@ use App\Laravel\Requests\Api\AdvisoryRequest;
 use Illuminate\Http\Request;
 use Str, Carbon, DB, Helper,ImageUploader,GeoIP,Input;
 
+
+/**
+ * Class AppSettingController
+ *
+ * @package App\Http\Controllers
+ *
+ * @SWG\Swagger(
+ *     basePath="",
+ *     host="marutichemicals.tk",
+ *     schemes={"http"},
+ *     @SWG\Info(
+ *         version="1.0",
+ *         title="WaveOne API",
+ *         @SWG\Contact(name="Aneep Tandel", url="https://github.com/aneepct"),
+ *     ),
+ *     @SWG\Definition(
+ *         definition="Error",
+ *         required={"code", "message"},
+ *         @SWG\Property(
+ *             property="code",
+ *             type="integer",
+ *             format="int32"
+ *         ),
+ *         @SWG\Property(
+ *             property="message",
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
 class AppSettingController extends Controller
 {
 
@@ -115,6 +145,34 @@ class AppSettingController extends Controller
         }
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *     path="/api/get-country.{format?}",
+     *     description="Returns country overview.",
+     *     operationId="api.country.index",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"Get Country"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Country overview."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
     public function get_country(Request $request, $format = ''){
 
         if(!empty($_SERVER['HTTP_CLIENT_IP'])){

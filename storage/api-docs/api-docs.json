@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "WaveOne API",
+        "contact": {
+            "name": "Aneep Tandel",
+            "url": "https://github.com/aneepct"
+        },
+        "version": "1.0"
+    },
+    "host": "marutichemicals.tk",
+    "basePath": "",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/get-country.{format?}": {
+            "get": {
+                "tags": [
+                    "Get Country"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns country overview.",
+                "operationId": "api.country.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Country overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Class AppSettingController",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "description": "Class AppSettingController",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
