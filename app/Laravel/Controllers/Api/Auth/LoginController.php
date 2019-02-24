@@ -155,44 +155,103 @@ class LoginController extends Controller {
 
 	}
 
-
+	/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Post(
+     *     path="/auth/v2/login.{format?}",
+     *     description="Returns authentication parameters.",
+     *     operationId="api.login.index",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"Authentication"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+	 *     @SWG\Parameter(
+	 *          name="contact",
+	 *          description="Email or Contact",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="password",
+	 *          description="Password",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="client_id",
+	 *          description="Client ID",
+	 *          required=true,
+	 *          type="integer",
+	 *          in="query"
+	 *     ),
+	 *     @SWG\Parameter(
+	 *          name="client_secret",
+	 *          description="Client Secret",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Country overview."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
 	public function authenticate_v2(Request $request, $format = '') {
 
 		$username = Str::lower($request->get('contact'));
 		$password = $request->get('password');
 
 		$field = filter_var($username, FILTER_VALIDATE_EMAIL) ? 'email' : 'contact';
-
-
+		
 		$user = User::where($field,$username)
-					->first();
-
+		->first();
+		
 		if(!$user){
 			$this->response['msg'] = "Invalid contact number/password.";
 			$this->response['status_code'] = "LOGIN_FAILED";
 			goto invalid_login;
 		}
 
-		if (Auth::attempt([$field => $username, 'password' => $password ])) {
+		$uesrdata = array(
+			$field => $username,
+			'password' => $password
+		);
 
-			$user = Auth::user();
-
+		if ($user) {
+			// $user = Auth::user();
+			
 			// Perform OAuth 2.0 authentication
 			// Using Laravel Passport (Password Grant)
 			$http = new \GuzzleHttp\Client;
-
+			
 			$response = $http->request('POST', url('/oauth/token'), [
-	            'http_errors' => false,
+				'http_errors' => false,
 	            'form_params' => [
-	                'grant_type'    => 'password',
+					'grant_type'    => 'password',
 	                'client_id'     => $request->get('client_id'),
 	                'client_secret' => $request->get('client_secret'),
 	                'username'      => $username,
 	                'password'      => $password,
 	                'scope'         => "*",
-	            ]
-	        ]);
-
+					]
+					]);
+			print_r($response);		
+			exit;
 	        if($response->getStatusCode() != 200) {
 	            $this->response['msg'] = Helper::get_response_message("LOGIN_FAILED");
 				$this->response['status_code'] = "LOGIN_FAILED";

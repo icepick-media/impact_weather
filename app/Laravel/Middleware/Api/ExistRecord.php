@@ -3,6 +3,7 @@
 namespace App\Laravel\Middleware\Api;
 
 use App\Laravel\Models\Farm;
+use App\Laravel\Models\FarmActivity;
 use App\Laravel\Models\FarmCrop;
 use App\Laravel\Models\Journal;
 use App\Laravel\Models\Station;
@@ -56,6 +57,16 @@ class ExistRecord
                         'status' => FALSE,
                         'status_code' => "FARM_NOT_FOUND",
                         'hint' => "Make sure the 'farm_id' from your request parameter is existing and valid."
+                    ];
+                }
+            break;
+            case 'farm_activity':
+                if( !$this->_exist_farm_activity($request) ) {
+                    $response = [
+                        'msg' => Helper::get_response_message("FARM_ACTIVITY_NOT_FOUND"),
+                        'status' => FALSE,
+                        'status_code' => "FARM_ACTIVITY_NOT_FOUND",
+                        'hint' => "Make sure the 'farm_activity_id' from your request parameter is existing and valid."
                     ];
                 }
             break;
@@ -134,6 +145,17 @@ class ExistRecord
         
         if($farm) {
             $request->merge(['farm_data' => $farm]);
+            return TRUE;
+        }
+
+        return FALSE;
+    }
+
+    private function _exist_farm_activity($request) {
+        $farm_acitivity = FarmActivity::where('id', $request->get('farm_activity_id'))->first();
+        
+        if($farm_acitivity) {
+            $request->merge(['farm_activity_data' => $farm_acitivity]);
             return TRUE;
         }
 

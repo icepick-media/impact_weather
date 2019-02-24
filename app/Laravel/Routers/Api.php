@@ -36,7 +36,8 @@ Route::group(
 		});
 
 		//All routes protected by authentication
-		$this->group(['middleware' => "auth:api"], function() {
+		//'middleware' => "auth:api"
+		$this->group([], function() {
 			$this->any('advisory.{format?}', ['as' => "advisory", 'uses' => "AppSettingController@advisory"]);
 			$this->group(['as' => "inquiry.",'prefix' => "inquiry"],function(){
 				$this->post('advisory.{format?}',['as' => "advisory", 'uses' => "AppSettingController@send_advisory"]);
@@ -81,6 +82,14 @@ Route::group(
 				$this->any('edit.{format?}', ['as' => "update", 'uses' => "FarmController@update", 'middleware' => "api.exists:farm"]);
 				$this->any('edit-crops.{format?}', ['as' => "update_crops", 'uses' => "FarmController@update_crops", 'middleware' => "api.exists:farm"]);
 				$this->any('delete.{format?}', ['as' => "destroy", 'uses' => "FarmController@destroy", 'middleware' => "api.exists:farm"]);
+			});
+
+			$this->group(['as' => "farm_activity.", 'prefix' => "farm_activity"], function() {
+				$this->get('all.{format?}', ['as' => "index", 'uses' => "FarmActivityController@index"]);
+				$this->get('{id}/get_activity.{format?}', ['as' => "show", 'uses' => "FarmActivityController@show"]);
+				$this->post('create.{format?}', ['as' => "store", 'uses' => "FarmActivityController@store"]);
+				$this->any('{id}/update_farm_acitvity.{format?}', ['as' => "update", 'uses' => "FarmActivityController@update"]);
+				$this->any('{id}/delete.{format?}', ['as' => "destroy", 'uses' => "FarmActivityController@destroy"]);
 			});
 
 			$this->group(['as' => "farm_crop.", 'prefix' => "farm-crops"], function() {

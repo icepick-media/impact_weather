@@ -26,8 +26,7 @@ use Str, Carbon, DB, Helper,ImageUploader,GeoIP,Input;
  * @package App\Http\Controllers
  *
  * @SWG\Swagger(
- *     basePath="",
- *     host="marutichemicals.tk",
+ *     basePath="/api",
  *     schemes={"http"},
  *     @SWG\Info(
  *         version="1.0",
@@ -64,7 +63,35 @@ class AppSettingController extends Controller
         $this->transformer = new TransformerManager;
     }
 
-    public function advisory(Request $request,$format = ''){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *     path="/advisory.{format?}",
+     *     description="Returns app settings.",
+     *     operationId="api.country.index",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"App Settings"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="App Settings."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
+    public function advisory(Request $request, $format = ''){
         $user = $request->user();
         $user_id = 0;
         if($user){
@@ -107,6 +134,34 @@ class AppSettingController extends Controller
 
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *     path="/app-settings.{format?}",
+     *     description="Returns app settings.",
+     *     operationId="api.country.index",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"App Settings"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="App Settings."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
     public function index(Request $request, $format = '') {
 
         $data = [
@@ -151,7 +206,7 @@ class AppSettingController extends Controller
      * @return \Illuminate\Http\JsonResponse
      *
      * @SWG\Get(
-     *     path="/api/get-country.{format?}",
+     *     path="/get-country.{format?}",
      *     description="Returns country overview.",
      *     operationId="api.country.index",
      *     produces={"application/json", "application/xml"},

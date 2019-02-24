@@ -8,13 +8,74 @@
         },
         "version": "1.0"
     },
-    "host": "marutichemicals.tk",
-    "basePath": "",
+    "basePath": "/api",
     "schemes": [
         "http"
     ],
     "paths": {
-        "/api/get-country.{format?}": {
+        "/advisory.{format?}": {
+            "get": {
+                "tags": [
+                    "App Settings"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns app settings.",
+                "operationId": "api.country.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/app-settings.{format?}": {
+            "get": {
+                "tags": [
+                    "App Settings"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns app settings.",
+                "operationId": "api.country.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/get-country.{format?}": {
             "get": {
                 "tags": [
                     "Get Country"
@@ -38,6 +99,387 @@
                 "responses": {
                     "200": {
                         "description": "Country overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/auth/v2/login.{format?}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns authentication parameters.",
+                "operationId": "api.login.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contact",
+                        "in": "query",
+                        "description": "Email or Contact",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "description": "Client ID",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "description": "Client Secret",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Country overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/auth/register.{format?}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns registration response.",
+                "operationId": "api.register.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contact",
+                        "in": "query",
+                        "description": "Phone Number",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Country overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/auth/v2/register.{format?}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns registration v2 response.",
+                "operationId": "api.register.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contact",
+                        "in": "query",
+                        "description": "Phone Number",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Country overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/farm_activity/all.{format?}": {
+            "get": {
+                "tags": [
+                    "Farm Activities"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns all farm activities.",
+                "operationId": "api.farm_activity.index",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/farm_activity/{id}/get_activity.{format?}": {
+            "get": {
+                "tags": [
+                    "Farm Activities"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns all farm activities.",
+                "operationId": "api.farm_activity.show",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Farm Activity Id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/farm_activity/create.{format?}": {
+            "post": {
+                "tags": [
+                    "Farm Activities"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Removefarm activity.",
+                "operationId": "api.farm_activity.store",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Activity Name.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Activity Code.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/farm_activity/{id}/update_farm_acitvity.{format?}": {
+            "put": {
+                "tags": [
+                    "Farm Activities"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Update Farm activities.",
+                "operationId": "api.farm_activity.update",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of activity",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name of activity",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Code of activity",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/farm_activity/{id}/delete.{format?}": {
+            "delete": {
+                "tags": [
+                    "Farm Activities"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Delete Farm activity.",
+                "operationId": "api.farm_activity.destroy",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format?",
+                        "in": "path",
+                        "description": "Response format.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of activity",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "App Settings."
                     },
                     "401": {
                         "description": "Unauthorized action."

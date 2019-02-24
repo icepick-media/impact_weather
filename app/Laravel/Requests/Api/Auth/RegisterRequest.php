@@ -18,7 +18,8 @@ class RegisterRequest extends ApiRequestManager
         $rules = [
             'name' => "required",
             // 'email' => "required|email|unique:user,email",
-            'contact' => "required|phone:PH|unique:user,contact",
+            // 'contact' => "required|phone:PH|unique:user,contact",
+            'contact' => "required|unique:user,contact",
             // 'contact_country' => "required_with:contact"
         ];
 

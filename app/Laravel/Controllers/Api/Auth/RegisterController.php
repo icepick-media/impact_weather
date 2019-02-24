@@ -31,6 +31,63 @@ class RegisterController extends Controller {
 		$this->transformer = new TransformerManager;
 	}
 
+
+	/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Post(
+     *     path="/auth/register.{format?}",
+     *     description="Returns registration response.",
+     *     operationId="api.register.index",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"Authentication"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+	 *     @SWG\Parameter(
+	 *          name="contact",
+	 *          description="Phone Number",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="email",
+	 *          description="Email",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 *     @SWG\Parameter(
+	 *          name="name",
+	 *          description="Name",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="password",
+	 *          description="Password",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Country overview."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
 	public function store(RegisterRequest $request, $format = '') {
 		$registrant = RegistrantContact::where('contact_number', $request->get('contact'))->where('status', "yes")->first();
 		if(!$registrant){
@@ -89,6 +146,63 @@ class RegisterController extends Controller {
 		}
 	}
 
+
+	/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Post(
+     *     path="/auth/v2/register.{format?}",
+     *     description="Returns registration v2 response.",
+     *     operationId="api.register.index",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"Authentication"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+	 *     @SWG\Parameter(
+	 *          name="contact",
+	 *          description="Phone Number",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="email",
+	 *          description="Email",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 *     @SWG\Parameter(
+	 *          name="name",
+	 *          description="Name",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="password",
+	 *          description="Password",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Country overview."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
 	public function store_v2(V2RegisterRequest $request, $format = '') {
 		$registrant = RegistrantContact::where('contact_number', $request->get('contact'))->where('status', "yes")->first();
 		if(!$registrant){
