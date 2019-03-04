@@ -187,20 +187,6 @@ class LoginController extends Controller {
 	 *          type="string",
 	 *          in="query"
 	 *     ),
-	 * 	   @SWG\Parameter(
-	 *          name="client_id",
-	 *          description="Client ID",
-	 *          required=true,
-	 *          type="integer",
-	 *          in="query"
-	 *     ),
-	 *     @SWG\Parameter(
-	 *          name="client_secret",
-	 *          description="Client Secret",
-	 *          required=true,
-	 *          type="string",
-	 *          in="query"
-	 *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="Country overview."
