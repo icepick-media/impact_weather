@@ -144,14 +144,12 @@
                         "name": "client_id",
                         "in": "query",
                         "description": "Client ID",
-                        "required": true,
                         "type": "string"
                     },
                     {
                         "name": "client_secret",
                         "in": "query",
                         "description": "Client Secret",
-                        "required": true,
                         "type": "string"
                     }
                 ],
