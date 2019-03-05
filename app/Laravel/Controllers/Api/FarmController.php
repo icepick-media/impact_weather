@@ -193,6 +193,42 @@ class FarmController extends Controller
 
     }
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *     path="/farms/delete.{format?}",
+     *     description="Remove a farm.",
+     *     operationId="api.farm.destroy",
+     *     produces={"application/json", "application/xml"},
+     *     tags={"Farms"},
+     *     @SWG\Parameter(
+     *         name="format?",
+     *         in="path",
+     *         type="string",
+     *         description="Response format.",
+     *         required=true,
+     *     ),
+     *     @SWG\Parameter(
+     *         name="farm_data",
+     *         in="query",
+     *         type="string",
+     *         description="Farm object to remove.",
+     *         required=true,
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="App Settings."
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     )
+     * )
+     */
     public function destroy(Request $request, $format = '') {
 
         $user = $request->user();

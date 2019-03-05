@@ -180,9 +180,23 @@ class LoginController extends Controller {
 	 *          type="string",
 	 *          in="query"
 	 *     ),
-	 * 	   @SWG\Parameter(
+	 *     @SWG\Parameter(
 	 *          name="password",
 	 *          description="Password",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 *     @SWG\Parameter(
+	 *          name="client_id",
+	 *          description="Client ID",
+	 *          required=true,
+	 *          type="string",
+	 *          in="query"
+	 *     ),
+	 * 	   @SWG\Parameter(
+	 *          name="client_secret",
+	 *          description="Client Secret",
 	 *          required=true,
 	 *          type="string",
 	 *          in="query"
@@ -229,15 +243,14 @@ class LoginController extends Controller {
 				'http_errors' => false,
 	            'form_params' => [
 					'grant_type'    => 'password',
-	                'client_id'     => $request->get('client_id'),
-	                'client_secret' => $request->get('client_secret'),
-	                'username'      => $username,
+	                'client_id'     => $request->get('client_id') ? $request->get('client_id') : 3,
+	                'client_secret' => $request->get('client_secret') ? $request->get('client_secret') : 'KrWdOMtrDzqNZkzjed1eUkEHnUrNOZoAsJL4Gv12',
+	                'username'      => $request->get('contact'),
 	                'password'      => $password,
 	                'scope'         => "*",
 					]
 					]);
-			print_r($response);		
-			exit;
+
 	        if($response->getStatusCode() != 200) {
 	            $this->response['msg'] = Helper::get_response_message("LOGIN_FAILED");
 				$this->response['status_code'] = "LOGIN_FAILED";

@@ -71,7 +71,7 @@ class AppSettingController extends Controller
      * @SWG\Get(
      *     path="/advisory.{format?}",
      *     description="Returns app settings.",
-     *     operationId="api.country.index",
+     *     operationId="api.get_country",
      *     produces={"application/json", "application/xml"},
      *     tags={"App Settings"},
      *     @SWG\Parameter(
@@ -142,7 +142,7 @@ class AppSettingController extends Controller
      * @SWG\Get(
      *     path="/app-settings.{format?}",
      *     description="Returns app settings.",
-     *     operationId="api.country.index",
+     *     operationId="api.index",
      *     produces={"application/json", "application/xml"},
      *     tags={"App Settings"},
      *     @SWG\Parameter(
