@@ -2,7 +2,15 @@
 <div id="main-menu" data-scroll-to-active="true" class="main-menu menu-dark menu-fixed menu-shadow menu-accordion">
   <!-- main menu header-->
   <div class="main-menu-header">
-    <input type="text" placeholder="Search" class="menu-search form-control round"/>
+    <div class="user-panel">
+      <div class="pull-center image">
+        <span class="avatar avatar-online"><img src="/backoffice/robust-assets/images/portrait/small/avatar-s-1.png" alt="avatar" class="img-circle"></span>
+      </div>
+      <div class="pull-left info">
+        <p>{{ Auth::user()->name }}</p>
+      </div>
+    </div>
+    {{--<input type="text" placeholder="Search" class="menu-search form-control round"/>--}}
   </div>
   <!-- / main menu header-->
   <!-- main menu content-->

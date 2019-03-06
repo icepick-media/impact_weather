@@ -20,6 +20,8 @@
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="/backoffice/assets/css/style.css">
+
+<link rel="stylesheet" type="text/css" href="/backoffice/assets/css/login.css">
 <style type="text/css">
 
 	.table .dropdown-menu {
