@@ -41,6 +41,13 @@ class FarmActivityController extends Controller
      *     produces={"application/json", "application/xml"},
      *     tags={"Farm Activities"},
      *     @SWG\Parameter(
+     *          name="Authorization",
+     *          in="header",
+     *          type="string",
+     *          description="Bearer <token>",
+     *          required=true,
+     *      ),
+     *     @SWG\Parameter(
      *         name="format?",
      *         in="path",
      *         type="string",

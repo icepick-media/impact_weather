@@ -295,6 +295,13 @@
                 ],
                 "parameters": [
                     {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWT Auth token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "name": "format?",
                         "in": "path",
                         "description": "Response format.",

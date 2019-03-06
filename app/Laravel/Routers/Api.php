@@ -37,7 +37,7 @@ Route::group(
 
 		//All routes protected by authentication
 		//'middleware' => "auth:api"
-		$this->group(['middleware' => "auth:api"], function() {
+		$this->group([], function() {
 			$this->any('advisory.{format?}', ['as' => "advisory", 'uses' => "AppSettingController@advisory"]);
 			$this->group(['as' => "inquiry.",'prefix' => "inquiry"],function(){
 				$this->post('advisory.{format?}',['as' => "advisory", 'uses' => "AppSettingController@send_advisory"]);
