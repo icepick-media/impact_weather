@@ -132,7 +132,7 @@ class FarmActivityController extends Controller
         $this->response['msg'] = "Farm Acitivity : {$farm_activity->name} loaded.";
         $this->response['status'] = TRUE;
         $this->response['status_code'] = "FARM_ACTIVITY_INFO";
-        $this->response['data'] = $farm_activity->toArray();
+        $this->response['farm_data'] = $farm_activity->toArray();
         $this->response_code = 200;
 
         callback:
@@ -198,7 +198,7 @@ class FarmActivityController extends Controller
         $this->response['msg'] = Helper::get_response_message("FARM_ACTIVITY_CREATED");
         $this->response['status'] = TRUE;
         $this->response['status_code'] = "FARM_ACTIVITY_CREATED";
-        $this->response['data'] = $farm_activity->toArray();
+        $this->response['farm_data'] = $farm_activity->toArray();
         $this->response_code = 200;
 
         callback:
@@ -282,7 +282,7 @@ class FarmActivityController extends Controller
         $this->response['msg'] = Helper::get_response_message("FARM_ACTIVITY_UPDATED");
         $this->response['status'] = TRUE;
         $this->response['status_code'] = "FARM_ACTIVITY_UPDATED";
-        $this->response['data'] = $farm_activity->toArray();
+        $this->response['farm_data'] = $farm_activity->toArray();
         $this->response_code = 200;
 
         callback:
@@ -350,7 +350,7 @@ class FarmActivityController extends Controller
         $this->response['msg'] = Helper::get_response_message("FARM_ACTIVITY_DELETED");
         $this->response['status'] = TRUE;
         $this->response['status_code'] = "FARM_ACTIVITY_DELETED";
-        $this->response['data'] = '';
+        $this->response['farm_data'] = '';
 
         callback:
         switch(Str::lower($format)){
