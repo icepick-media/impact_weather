@@ -139,10 +139,10 @@ textarea::-moz-placeholder { color: #999999;}
 textarea:-ms-input-placeholder { color: #999999;}
 
 
-label {
-    display: block;
-    margin: 0;
-}
+/*label {*/
+    /*display: block;*/
+    /*margin: 0;*/
+/*}*/
 
 /*---------------------------------------------*/
 button {
