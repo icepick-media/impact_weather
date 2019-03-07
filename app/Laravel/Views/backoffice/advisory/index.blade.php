@@ -2,31 +2,34 @@
 @section('content')
 <div class="robust-content content container-fluid">
   <div class="content-wrapper">
-    <div class="content-header row">
-      <div class="breadcrumb-wrapper col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-          <li class="breadcrumb-item active">Advisory</li>
-        </ol>
+      <div class="content-header1 row">
+          <div class="content-header-left col-md-6 col-xs-12">
+              <h3 class="content-header-title mb-0" >All Advisory</h3>
+              {{--<p class="text-muted mb-0">Record data of all advisory.</p>--}}
+              <div class="breadcrumb-wrapper col-xs-12 breadcrumb-top-dashboard" >
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
+                      <li class="breadcrumb-item "><a href="{{ route('backoffice.advisory.index') }}">Advisory</a></li>
+                  </ol>
+              </div>
+          </div>
+
+          <div class="content-header-right col-md-6 col-xs-12">
+              <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1 ">
+                  <a href="{{ route('backoffice.advisory.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
+                  <a href="{{ route('backoffice.advisory.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
+              </div>
+          </div>
+
+
+          <div class="content-header-lead col-xs-12 mt-1">
+              <p class="lead">
+                  {{-- Page Lead Paragraph --}}
+              </p>
+          </div>
       </div>
-      <div class="content-header-left col-md-6 col-xs-12">
-        <h3 class="content-header-title mb-0">All Advisory</h3>
-        <p class="text-muted mb-0">Record data of all advisory.</p>
-      </div>
-      <div class="content-header-right col-md-6 col-xs-12">
-        <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1">
-          <a href="{{ route('backoffice.advisory.create') }}" class="btn btn-info"><i class="icon-plus"></i> Add New</a>
-          <a href="{{ route('backoffice.advisory.trash') }}" class="btn btn-info"><i class="icon-trash2"></i> Trash</a>
-        </div>
-      </div>
-      <div class="content-header-lead col-xs-12 mt-1">
-        <p class="lead">
-          {{-- Page Lead Paragraph --}}
-        </p>
-      </div>
-    </div>
     <div class="content-body">
-      
+
 
       <!-- Bootstrap 3 table -->
       <section id="bootstrap3">
@@ -95,11 +98,12 @@
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th width="25px">ID</th>
-                          <th>Content</th>
-                          <th>Status</th>
-                          <th>Last Modified</th>
-                          <th width="100px"></th>
+                            <th width="25px">ID</th>
+                            <th>Content</th>
+                            <th>Status</th>
+                            <th>Adviced User / Farm</th>
+                            <th>Last Modified</th>
+                            <th width="100px"></th>
                         </tr>
                       </tfoot>
                     </table>  

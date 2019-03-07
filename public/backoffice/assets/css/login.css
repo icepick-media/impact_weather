@@ -621,17 +621,3 @@ input.input {
     color: #fff;
 }
 
-.content-header{
-    margin-top: 10px;
-    background-color: #FFF;
-    height: 63px;
-}
-
-.content-header h1{
-    margin-left: 27px;
-    padding-top: 15px;
-}
-
-.card-group{
-    width: 107%;
-}

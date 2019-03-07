@@ -6,17 +6,19 @@
 	</section>
 	<div class="content-wrapper">
 
-		<div class="content-body"><!-- Analytics charts -->
+		<div class="content-body">
 			<div class="row">
+				{{--------GOOGLE-MAP---------}}
 				<div class="col-md-8 col-md-lg-8 col-xs-8">
 					<div id="map" style="height: 400px; width: 100%;"></div>
 				</div>
+					{{-------------CARD-SECTION----------------}}
 				<div class="col-xl-4 col-lg-12 col-md-12">
-					<div class="card-group">
-						<div class="card">
+					<div class="card-group card-dashboard-right">
+						<div class="card" style="font-size: 13px">
 							<div class="card-body text-center">
 								<div class="card-block">
-									 <div class="media ml-1">
+									 <div class="media ml-0">
 										<div class="  media-middle">
 											<i class="icon-location3 success font-large-2 text-center"></i>
 										</div>
@@ -32,14 +34,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="card">
+						<div class="card" style="font-size: 13px">
 							<div class="card-body text-center">
 								<div class="card-block">
-									<div class="media ml-1">
+									<div class="media ml-0">
 										<div class="media-middle">
 											<i class="icon-user5 info font-large-2"></i>
 										</div>
-										<div class="media-body text-xs-left">
+										<div class="media-body text-xs-center">
 											<span>Today's Registrant</span>
 										</div>
 										<div class="media-bottom">
@@ -50,14 +52,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="card">
+						<div class="card" style="font-size: 13px">
 							<div class="card-body text-center">
 								<div class="card-block">
-									<div class="media ml-1">
+									<div class="media ml-0">
 										<div class="media-middle">
 											<i class="icon-user5 info font-large-2"></i>
 										</div>
-										<div class="media-body text-xs-left">
+										<div class="media-body text-xs-center">
 											<span>All App Users</span>
 										</div>
 										<div class="media-bottom">
@@ -70,11 +72,13 @@
 						</div>
 					</div>
 			    </div>
-				{{--------------CHART SECTION----------------}}
+
+
+				{{---------------CHART SECTION----------------}}
 				<div class="col-xl-4 col-lg-12 col-md-12">
 					<div class="box box-danger">
 						<div class="box-body">
-							<div id="donutchart" style="width: 357px; height: 200px;"></div>
+							<div id="donutchart" style="width: 334px; height: 180px;"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
@@ -83,8 +87,10 @@
 			    {{--</div>--}}
 			</div>
 			</div>
+
+			{{----------------TABLE-SECTION---------------}}
 			<div class="row">
-				<div class="col-md-8 col-md-lg-8 col-xs-8">
+				<div class="col-md-8 col-md-lg-8 col-xs-8 pt-1">
 					<div class="card">
 			            <div class="card-header">
 			                <h4 class="card-title">Today's Activity Report ({{Carbon::now()->format("M d Y")}})</h4>
@@ -155,14 +161,16 @@
 				<div class="col-xl-4 col-lg-12 col-md-12 mt-1">
 					<div class="box box-danger">
 						<div class="box-body">
-							<div id="donutchart1" style="width: 357px; height: 200px;"></div>
+							<div id="donutchart1" style="width: 334px; height: 190px;"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
 				</div>
+
+				{{--------------TABLE-SECTION-2-----------}}
 			</div>
 			<div class="row">
-				<div class="col-md-8 col-md-lg-8 col-xs-8">
+				<div class="col-md-12 col-md-lg-12 col-xs-12">
 					<div class="card">
 			            <div class="card-header">
 			                <h4 class="card-title">Registered Users</h4>
@@ -210,17 +218,16 @@
 			            </div>
 			        </div>
 				</div>
-				<div class="col-xl-4 col-lg-12 col-md-12 mt-1">
-					<div class="box box-danger">
-						<div class="box-body">
-							<div id="donutchart2" style="width: 357px; height: 200px;"></div>
-						</div>
-						<!-- /.box-body -->
-					</div>
-				</div>
+				{{--<div class="col-xl-4 col-lg-12 col-md-12 mt-1">--}}
+					{{--<div class="box box-danger">--}}
+						{{--<div class="box-body">--}}
+							{{--<div id="donutchart2" style="width: 357px; height: 200px;"></div>--}}
+						{{--</div>--}}
+						{{--<!-- /.box-body -->--}}
+					{{--</div>--}}
+				{{--</div>--}}
 			</div>
-			
-			<!--/ Analytics charts -->
+
 		</div>
 	</div>
 </div>
@@ -404,24 +411,5 @@
 		chart.draw(data, options);
 	}
 </script>
-<script>
-	google.charts.load("current", {packages:["corechart"]});
-	google.charts.setOnLoadCallback(drawChart);
-	function drawChart() {
-		var data = google.visualization.arrayToDataTable([
-			['Task', 'Hours per Day'],
-			['Work',     16],
-			['Sleep',    6]
-		]);
 
-		var options = {
-			title: 'Pesticide Application',
-			pieHole: 0.4,
-			colors: ['#49AF35', '#CCCCCC']
-		};
-
-		var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
-		chart.draw(data, options);
-	}
-</script>
 @stop

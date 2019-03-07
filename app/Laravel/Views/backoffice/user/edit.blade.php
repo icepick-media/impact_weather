@@ -2,21 +2,21 @@
 @section('content')
 <div class="robust-content content container-fluid">
   <div class="content-wrapper">
-    <div class="content-header row">
-      <div class="breadcrumb-wrapper col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.user.index') }}">Users</a></li>
-          <li class="breadcrumb-item active">{{ $user->name }}</li>
-        </ol>
-      </div>
+    <div class="content-header1 row">
       <div class="content-header-left col-md-6 col-xs-12">
-        <h3 class="content-header-title mb-0">{{ $user->name }}</h3>
-        <p class="text-muted mb-0">Edit the details of this user.</p>
+        <h3 class="content-header-title mb-0">Edit {{ $user->name }}</h3>
+        {{--<p class="text-muted mb-0">Edit the details of this user.</p>--}}
+        <div class="breadcrumb-wrapper col-xs-12 breadcrumb-top-dashboard">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('backoffice.user.index') }}">Users</a></li>
+            <li class="breadcrumb-item active">{{ $user->name }}</li>
+          </ol>
+        </div>
       </div>
       <div class="content-header-right col-md-6 col-xs-12">
         <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1">
-          <a target="_blank" href="{{ route('backoffice.advisory.create') }}?uid={{$user->id}}" class="btn btn-info"><i class="icon-plus"></i> Send New Advisory</a>
+          <a target="_blank" href="{{ route('backoffice.advisory.create') }}?uid={{$user->id}}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Send New Advisory</a>
           <!-- <a href="{{ route('backoffice.user.create') }}" class="btn btn-info"><i class="icon-plus"></i> Add New</a>
           <a href="{{ route('backoffice.user.trash') }}" class="btn btn-info"><i class="icon-trash2"></i> Trash</a> -->
         </div>
@@ -127,10 +127,10 @@
                     </div>
 
                     <div class="form-actions">
-                      <button type="submit" class="btn btn-primary mr-1">
+                      <button type="submit" class="btn btn-info btn-radius mr-1">
                         <i class="icon-check2"></i> Update Profile
                       </button>
-                      <a href="{{ route('backoffice.user.edit',[$user->id]) }}" class="btn btn-default">
+                      <a href="{{ route('backoffice.user.edit',[$user->id]) }}" class="btn btn-danger btn-trash">
                         <i class="icon-cross2"></i> Cancel
                       </a>
                     </div>

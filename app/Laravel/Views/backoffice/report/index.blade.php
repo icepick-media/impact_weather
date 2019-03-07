@@ -2,17 +2,17 @@
 @section('content')
 <div class="robust-content content container-fluid">
   <div class="content-wrapper">
-    <div class="content-header row">
-      <div class="breadcrumb-wrapper col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-          <li class="breadcrumb-item active">Reports</li>
-        </ol>
-      </div>
-      <div class="content-header-left col-md-6 col-xs-12">
-        <h3 class="content-header-title mb-0">All Reports</h3>
-        <p class="text-muted mb-0">Record data of all reports.</p>
-      </div>
+    <div class="content-header1 row">
+        <div class="content-header-left col-md-6 col-xs-12">
+            <h3 class="content-header-title mb-0">All Reports</h3>
+            {{--<p class="text-muted mb-0">Record data of all reports.</p>--}}
+              <div class="breadcrumb-wrapper col-xs-12 breadcrumb-top-dashboard">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
+                  <li class="breadcrumb-item active">Reports</li>
+                </ol>
+              </div>
+        </div>
       <div class="content-header-lead col-xs-12 mt-1">
         <p class="lead">
           {{-- Page Lead Paragraph --}}

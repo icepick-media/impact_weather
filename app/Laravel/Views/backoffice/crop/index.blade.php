@@ -2,21 +2,21 @@
 @section('content')
 <div class="robust-content content container-fluid">
   <div class="content-wrapper">
-    <div class="content-header row">
-      <div class="breadcrumb-wrapper col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-          <li class="breadcrumb-item active">Crop</li>
-        </ol>
-      </div>
-      <div class="content-header-left col-md-6 col-xs-12">
-        <h3 class="content-header-title mb-0">All Crops</h3>
-        <p class="text-muted mb-0">Record data of all crops in your mobile application.</p>
+    <div class="content-header1 row">
+        <div class="content-header-left col-md-6 col-xs-12">
+            <h3 class="content-header-title mb-0">All Crops</h3>
+            {{--<p class="text-muted mb-0">Record data of all crops in your mobile application.</p>--}}
+          <div class="breadcrumb-wrapper col-xs-12 breadcrumb-top-dashboard">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
+              <li class="breadcrumb-item active">Crop</li>
+            </ol>
+          </div>
       </div>
       <div class="content-header-right col-md-6 col-xs-12">
         <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1">
-          <a href="{{ route('backoffice.crop.create') }}" class="btn btn-info"><i class="icon-plus"></i> Add New</a>
-          <a href="{{ route('backoffice.crop.trash') }}" class="btn btn-info"><i class="icon-trash2"></i> Trash</a>
+          <a href="{{ route('backoffice.crop.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
+          <a href="{{ route('backoffice.crop.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
         </div>
       </div>
       <div class="content-header-lead col-xs-12 mt-1">
@@ -26,7 +26,6 @@
       </div>
     </div>
     <div class="content-body">
-      
 
       <!-- Bootstrap 3 table -->
       <section id="bootstrap3">
@@ -94,8 +93,8 @@
                           <th width="100px"></th>
                         </tr>
                       </tfoot>
-                    </table>  
-                  </div>      
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,57 +122,57 @@
 @stop
 
 @section('page-scripts')
-<script type="text/javascript">
-  $(function(){
+    <script type="text/javascript">
+        $(function(){
 
-    $.extend( $.fn.dataTable.defaults, {
-        drawCallback: function () {
-            $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
-        },
-        preDrawCallback: function() {
-            $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
-        }
-    });
+            $.extend( $.fn.dataTable.defaults, {
+                drawCallback: function () {
+                    $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
+                },
+                preDrawCallback: function() {
+                    $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
+                }
+            });
 
-    $('.table-responsive').on('shown.bs.dropdown', function (e) {
-        var t = $(this), 
-            m = $(e.target).find('.dropdown-menu'),
-            tb = t.offset().top + t.height(),
-            mb = m.offset().top + m.outerHeight(true),
-            d = 20; // Space for shadow + scrollbar.   
-        if (t[0].scrollWidth > t.innerWidth()) {
-            if (mb + d > tb) {
-                t.css('padding-bottom', ((mb + d) - tb)); 
-            }
-        } else {
-            t.css('overflow', 'visible');
-        }
-    }).on('hidden.bs.dropdown', function () {
-        $(this).css({'padding-bottom': '', 'overflow': ''});
-    });
+            $('.table-responsive').on('shown.bs.dropdown', function (e) {
+                var t = $(this),
+                        m = $(e.target).find('.dropdown-menu'),
+                        tb = t.offset().top + t.height(),
+                        mb = m.offset().top + m.outerHeight(true),
+                        d = 20; // Space for shadow + scrollbar.
+                if (t[0].scrollWidth > t.innerWidth()) {
+                    if (mb + d > tb) {
+                        t.css('padding-bottom', ((mb + d) - tb));
+                    }
+                } else {
+                    t.css('overflow', 'visible');
+                }
+            }).on('hidden.bs.dropdown', function () {
+                $(this).css({'padding-bottom': '', 'overflow': ''});
+            });
 
-    $('.datatable').DataTable({
-        "columnDefs": [{
-          "targets": [ -1 ],
-          "orderable": false,
-        }]
-    });
+            $('.datatable').DataTable({
+                "columnDefs": [{
+                    "targets": [ -1 ],
+                    "orderable": false,
+                }]
+            });
 
-    $('.datatable').delegate('.btn-delete','click', function(){
-        var url = $(this).data('url');
-        //Warning Message
-        swal({   
-            title: "Are you sure?",   
-            text: "You will not be able to recover this record!",   
-            type: "warning",   
-            showCancelButton: true,   
-            confirmButtonColor: "#DD6B55",   
-            confirmButtonText: "Yes, delete it!",   
-            closeOnConfirm: false 
-        }, function(){   
-            window.location.href = url;
+            $('.datatable').delegate('.btn-delete','click', function(){
+                var url = $(this).data('url');
+                //Warning Message
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this record!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function(){
+                    window.location.href = url;
+                });
+            });
         });
-    });
-  });
-</script>
+    </script>
 @stop

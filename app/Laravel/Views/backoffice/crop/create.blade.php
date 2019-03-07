@@ -2,22 +2,22 @@
 @section('content')
 <div class="robust-content content container-fluid">
   <div class="content-wrapper">
-    <div class="content-header row">
-      <div class="breadcrumb-wrapper col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.crop.index') }}">Crops</a></li>
-          <li class="breadcrumb-item active">Add new</li>
-        </ol>
-      </div>
+    <div class="content-header1 row">
       <div class="content-header-left col-md-6 col-xs-12">
         <h3 class="content-header-title mb-0">Add new Crop</h3>
-        <p class="text-muted mb-0">Add a new crop to your mobile application.</p>
+        {{--<p class="text-muted mb-0">Add a new crop to your mobile application.</p>--}}
+        <div class="breadcrumb-wrapper col-xs-12 breadcrumb-top-dashboard">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('backoffice.crop.index') }}">Crops</a></li>
+            <li class="breadcrumb-item active">Add new</li>
+          </ol>
+        </div>
       </div>
       <div class="content-header-right col-md-6 col-xs-12">
         <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1">
-          <a href="{{ route('backoffice.crop.create') }}" class="btn btn-info"><i class="icon-plus"></i> Add New</a>
-          <a href="{{ route('backoffice.crop.trash') }}" class="btn btn-info"><i class="icon-trash2"></i> Trash</a>
+          <a href="{{ route('backoffice.crop.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
+          <a href="{{ route('backoffice.crop.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
         </div>
       </div>
       <div class="content-header-lead col-xs-12 mt-1">
@@ -89,10 +89,10 @@
                     </div>
 
                     <div class="form-actions">
-                      <button type="submit" class="btn btn-primary mr-1">
+                      <button type="submit" class="btn btn-info btn-radius mr-1">
                         <i class="icon-check2"></i> Save
                       </button>
-                      <a href="{{ route('backoffice.crop.index') }}" class="btn btn-default">
+                      <a href="{{ route('backoffice.crop.index') }}" class="btn btn-danger btn-trash">
                         <i class="icon-cross2"></i> Cancel
                       </a>
                     </div>
