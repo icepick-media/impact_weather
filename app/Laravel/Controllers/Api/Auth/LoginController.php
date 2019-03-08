@@ -211,7 +211,7 @@ class LoginController extends Controller {
      */
 	public function authenticate_v2(Request $request, $format = '') {
 
-		$username = Str::lower($request->get('contact'));
+		$username = substr(Str::lower($request->get('contact')), -10);
 		$password = $request->get('password');
 
 		$field = filter_var($username, FILTER_VALIDATE_EMAIL) ? 'email' : 'contact';
@@ -243,7 +243,7 @@ class LoginController extends Controller {
 					'grant_type'    => 'password',
 	                'client_id'     => $request->get('client_id') ? $request->get('client_id') : 3,
 	                'client_secret' => $request->get('client_secret') ? $request->get('client_secret') : 'KrWdOMtrDzqNZkzjed1eUkEHnUrNOZoAsJL4Gv12',
-	                'username'      => $request->get('contact'),
+	                'username'      => $username,
 	                'password'      => $password,
 	                'scope'         => "*",
 					]
