@@ -26,7 +26,7 @@
     </div>
     <div class="content-body">
       <section id="horizontal-form-layouts">
-        <div class="row">
+        <div class="row  new-station-details">
           <div class="col-md-6">
             @if(Input::get('update_profile','no') == "yes")
             <div class="card">
