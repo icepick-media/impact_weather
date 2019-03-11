@@ -100,3 +100,10 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     width:100%;
     /*margin-left: 8px;*/
 }
+.pagination-item{
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #0071bc;
+    border-color: #0071bc;
+}
