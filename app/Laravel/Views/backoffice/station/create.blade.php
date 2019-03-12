@@ -30,7 +30,7 @@
     <div class="content-body">
       <section id="horizontal-form-layouts">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-8 new-station-details">
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title" id="horz-layout-basic">Station Details</h4>

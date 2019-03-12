@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e35e2545-af4e-42a8-b2ad-b19b7da8c81c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Laravel/Views/backoffice/_includes/styles.blade.php" afterPath="$PROJECT_DIR$/app/Laravel/Views/backoffice/_includes/styles.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/main-menu.blade.php" afterPath="$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/main-menu.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/backoffice/assets/css/style.css" afterPath="$PROJECT_DIR$/public/backoffice/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/backoffice/robust-assets/css/app.min.css" afterPath="$PROJECT_DIR$/public/backoffice/robust-assets/css/app.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/backoffice/robust-assets/css/vendors.min.css" afterPath="$PROJECT_DIR$/public/backoffice/robust-assets/css/vendors.min.css" />
     </list>
     <ignored path="impact_weather.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,114 +27,7 @@
     <favorites_list name="impact_weather" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.714286">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-              <folding>
-                <element signature="e#297#415#0#HTML" expanded="false" />
-                <element signature="e#362#397#0#HTML" expanded="true" />
-                <element signature="e#5624#8528#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/_includes/styles.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7927928">
-              <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/backoffice/assets/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.310345">
-              <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/profile.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trash.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/trash.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="91" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/backoffice/assets/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="150" column="28" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="132" column="103" selection-start-line="132" selection-start-column="79" selection-end-line="132" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataTables.bootstrap4.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/backoffice/robust-assets/js/plugins/tables/datatable/dataTables.bootstrap4.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -150,9 +44,7 @@
         <option value="$PROJECT_DIR$/resources/views/vendor/l5-swagger/index.blade.php" />
         <option value="$PROJECT_DIR$/public/backoffice/assets/css/main.css" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/main-menu.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/nav.blade.php" />
-        <option value="$PROJECT_DIR$/public/backoffice/robust-assets/css/app.min.css" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/report/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/trash.blade.php" />
@@ -165,21 +57,25 @@
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/registrant/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/registrant/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/registrant/trash.blade.php" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/map.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/trash.blade.php" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/trash.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/profile.blade.php" />
         <option value="$PROJECT_DIR$/public/backoffice/assets/css/login.css" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/backoffice/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/_includes/styles.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/farm/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/station/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/user/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/main-menu.blade.php" />
+        <option value="$PROJECT_DIR$/public/backoffice/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/backoffice/robust-assets/css/vendors.min.css" />
+        <option value="$PROJECT_DIR$/public/backoffice/robust-assets/css/app.min.css" />
       </list>
     </option>
   </component>
@@ -270,32 +166,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="backoffice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impact_weather" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impact_weather" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backoffice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -359,6 +229,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="backoffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impact_weather" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impact_weather" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backoffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advisory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,15 +351,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26172465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2730711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -507,34 +407,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/main-menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032315977">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032315977">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1364453">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Laravel/Controllers/Frontend/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.29263914">
@@ -632,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321918">
           <caret line="494" column="22" selection-start-line="494" selection-start-column="22" selection-end-line="494" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -640,13 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5925925">
           <caret line="492" column="1" selection-start-line="492" selection-start-column="1" selection-end-line="492" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -675,13 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.666667">
           <caret line="94" column="100" selection-start-line="94" selection-start-column="100" selection-end-line="94" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/crop/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665">
-          <caret line="17" column="81" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -727,31 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0">
-          <caret line="139" column="26" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="52.0">
-          <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/map.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.333333">
           <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/farm/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -773,15 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="75" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,57 +616,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="91" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/_includes/styles.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7109515">
+          <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34829444">
+          <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/themes/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.34829444">
+          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/bd2ed4ca710ac1131c1d9a53f703b7049ee1e228.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="103" selection-start-line="132" selection-start-column="79" selection-end-line="132" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/backoffice/robust-assets/css/vendors.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36603773">
-          <caret line="5" column="99617" selection-start-line="5" selection-start-column="99617" selection-end-line="5" selection-end-column="99617" />
-          <folding>
-            <element signature="e#27399#27646#2" expanded="false" />
-            <element signature="e#28104#28424#2" expanded="false" />
-            <element signature="e#28875#29164#2" expanded="false" />
-            <element signature="e#52767#52967#2" expanded="false" />
-            <element signature="e#53089#53238#2" expanded="false" />
-            <element signature="e#53384#53530#2" expanded="false" />
-            <element signature="e#53883#54046#1" expanded="false" />
-            <element signature="e#61499#61731#2" expanded="false" />
-            <element signature="e#62885#63115#2" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.6445242">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.032315977">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/backoffice/assets/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032315977">
+          <caret line="150" column="28" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/backoffice/robust-assets/css/app.min.css">
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/farm/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03787879">
-          <caret line="1" column="122388" selection-start-line="1" selection-start-column="122388" selection-end-line="1" selection-end-column="122388" />
-          <folding />
+        <state vertical-scroll-proportion="0.33213645">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3327338">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5503597">
+          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.161871">
+          <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -847,52 +696,172 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/crop/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9629629">
+          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6798561">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/backoffice/robust-assets/css/vendors.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36690646">
+          <caret line="5" column="4599" selection-start-line="5" selection-start-column="4599" selection-end-line="5" selection-end-column="4599" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#27399#27646#2" expanded="true" />
+            <element signature="e#28104#28424#2" expanded="true" />
+            <element signature="e#28875#29164#2" expanded="true" />
+            <element signature="e#52767#52967#2" expanded="true" />
+            <element signature="e#53089#53238#2" expanded="true" />
+            <element signature="e#53384#53530#2" expanded="true" />
+            <element signature="e#53883#54046#1" expanded="true" />
+            <element signature="e#61499#61731#2" expanded="true" />
+            <element signature="e#62885#63115#2" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/backoffice/assets/css/login.css">
+    <entry file="file://$PROJECT_DIR$/public/backoffice/robust-assets/css/app.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="150" column="28" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.9028777">
+          <caret line="14" column="72604" selection-start-line="14" selection-start-column="72604" selection-end-line="14" selection-end-column="72604" />
+          <caret line="14" column="72716" selection-start-line="14" selection-start-column="72716" selection-end-line="14" selection-end-column="72716" />
+          <caret line="14" column="72760" selection-start-line="14" selection-start-column="72760" selection-end-line="14" selection-end-column="72760" />
+          <caret line="14" column="73019" selection-start-line="14" selection-start-column="73019" selection-end-line="14" selection-end-column="73019" />
+          <caret line="14" column="73083" selection-start-line="14" selection-start-column="73083" selection-end-line="14" selection-end-column="73083" />
+          <caret line="14" column="73141" selection-start-line="14" selection-start-column="73141" selection-end-line="14" selection-end-column="73141" />
+          <caret line="14" column="73209" selection-start-line="14" selection-start-column="73209" selection-end-line="14" selection-end-column="73209" />
+          <caret line="14" column="74453" selection-start-line="14" selection-start-column="74453" selection-end-line="14" selection-end-column="74453" />
+          <caret line="14" column="74525" selection-start-line="14" selection-start-column="74525" selection-end-line="14" selection-end-column="74525" />
+          <caret line="14" column="74595" selection-start-line="14" selection-start-column="74595" selection-end-line="14" selection-end-column="74595" />
+          <caret line="14" column="74666" selection-start-line="14" selection-start-column="74666" selection-end-line="14" selection-end-column="74666" />
+          <caret line="14" column="74903" selection-start-line="14" selection-start-column="74903" selection-end-line="14" selection-end-column="74903" />
+          <caret line="14" column="74970" selection-start-line="14" selection-start-column="74970" selection-end-line="14" selection-end-column="74970" />
+          <caret line="14" column="75035" selection-start-line="14" selection-start-column="75035" selection-end-line="14" selection-end-column="75035" />
+          <caret line="14" column="75097" selection-start-line="14" selection-start-column="75097" selection-end-line="14" selection-end-column="75097" />
+          <caret line="14" column="76914" selection-start-line="14" selection-start-column="76914" selection-end-line="14" selection-end-column="76914" />
+          <caret line="14" column="77058" selection-start-line="14" selection-start-column="77058" selection-end-line="14" selection-end-column="77058" />
+          <caret line="14" column="77399" selection-start-line="14" selection-start-column="77399" selection-end-line="14" selection-end-column="77399" />
+          <caret line="14" column="77581" selection-start-line="14" selection-start-column="77581" selection-end-line="14" selection-end-column="77581" />
+          <caret line="14" column="77653" selection-start-line="14" selection-start-column="77653" selection-end-line="14" selection-end-column="77653" />
+          <caret line="14" column="77695" selection-start-line="14" selection-start-column="77695" selection-end-line="14" selection-end-column="77695" />
+          <caret line="14" column="77760" selection-start-line="14" selection-start-column="77760" selection-end-line="14" selection-end-column="77760" />
+          <caret line="14" column="77768" selection-start-line="14" selection-start-column="77768" selection-end-line="14" selection-end-column="77768" />
+          <caret line="14" column="77900" selection-start-line="14" selection-start-column="77900" selection-end-line="14" selection-end-column="77900" />
+          <caret line="14" column="78007" selection-start-line="14" selection-start-column="78007" selection-end-line="14" selection-end-column="78007" />
+          <caret line="14" column="78144" selection-start-line="14" selection-start-column="78144" selection-end-line="14" selection-end-column="78144" />
+          <caret line="14" column="78250" selection-start-line="14" selection-start-column="78250" selection-end-line="14" selection-end-column="78250" />
+          <caret line="14" column="78575" selection-start-line="14" selection-start-column="78575" selection-end-line="14" selection-end-column="78575" />
+          <caret line="14" column="78649" selection-start-line="14" selection-start-column="78649" selection-end-line="14" selection-end-column="78649" />
+          <caret line="14" column="78772" selection-start-line="14" selection-start-column="78772" selection-end-line="14" selection-end-column="78772" />
+          <caret line="14" column="78784" selection-start-line="14" selection-start-column="78784" selection-end-line="14" selection-end-column="78784" />
+          <caret line="14" column="78866" selection-start-line="14" selection-start-column="78866" selection-end-line="14" selection-end-column="78866" />
+          <caret line="14" column="78878" selection-start-line="14" selection-start-column="78878" selection-end-line="14" selection-end-column="78878" />
+          <caret line="14" column="78958" selection-start-line="14" selection-start-column="78958" selection-end-line="14" selection-end-column="78958" />
+          <caret line="14" column="78970" selection-start-line="14" selection-start-column="78970" selection-end-line="14" selection-end-column="78970" />
+          <caret line="14" column="79047" selection-start-line="14" selection-start-column="79047" selection-end-line="14" selection-end-column="79047" />
+          <caret line="14" column="79059" selection-start-line="14" selection-start-column="79059" selection-end-line="14" selection-end-column="79059" />
+          <caret line="14" column="79128" selection-start-line="14" selection-start-column="79128" selection-end-line="14" selection-end-column="79128" />
+          <caret line="14" column="79352" selection-start-line="14" selection-start-column="79352" selection-end-line="14" selection-end-column="79352" />
+          <caret line="14" column="79424" selection-start-line="14" selection-start-column="79424" selection-end-line="14" selection-end-column="79424" />
+          <caret line="14" column="79481" selection-start-line="14" selection-start-column="79481" selection-end-line="14" selection-end-column="79481" />
+          <caret line="14" column="79524" selection-start-line="14" selection-start-column="79524" selection-end-line="14" selection-end-column="79524" />
+          <caret line="14" column="79743" selection-start-line="14" selection-start-column="79743" selection-end-line="14" selection-end-column="79743" />
+          <caret line="14" column="79774" selection-start-line="14" selection-start-column="79774" selection-end-line="14" selection-end-column="79774" />
+          <caret line="14" column="79799" selection-start-line="14" selection-start-column="79799" selection-end-line="14" selection-end-column="79799" />
+          <caret line="14" column="79932" selection-start-line="14" selection-start-column="79932" selection-end-line="14" selection-end-column="79932" />
+          <caret line="14" column="79975" selection-start-line="14" selection-start-column="79975" selection-end-line="14" selection-end-column="79975" />
+          <caret line="14" column="80024" selection-start-line="14" selection-start-column="80024" selection-end-line="14" selection-end-column="80024" />
+          <caret line="14" column="80116" selection-start-line="14" selection-start-column="80116" selection-end-line="14" selection-end-column="80116" />
+          <caret line="14" column="80182" selection-start-line="14" selection-start-column="80182" selection-end-line="14" selection-end-column="80182" />
+          <caret line="14" column="80239" selection-start-line="14" selection-start-column="80239" selection-end-line="14" selection-end-column="80239" />
+          <caret line="14" column="80327" selection-start-line="14" selection-start-column="80327" selection-end-line="14" selection-end-column="80327" />
+          <caret line="14" column="80462" selection-start-line="14" selection-start-column="80462" selection-end-line="14" selection-end-column="80462" />
+          <caret line="14" column="81157" selection-start-line="14" selection-start-column="81157" selection-end-line="14" selection-end-column="81157" />
+          <caret line="14" column="81213" selection-start-line="14" selection-start-column="81213" selection-end-line="14" selection-end-column="81213" />
+          <caret line="14" column="81265" selection-start-line="14" selection-start-column="81265" selection-end-line="14" selection-end-column="81265" />
+          <caret line="14" column="81313" selection-start-line="14" selection-start-column="81313" selection-end-line="14" selection-end-column="81313" />
+          <caret line="14" column="81363" selection-start-line="14" selection-start-column="81363" selection-end-line="14" selection-end-column="81363" />
+          <caret line="0" column="6862" selection-start-line="0" selection-start-column="6862" selection-end-line="0" selection-end-column="6862" />
+          <caret line="0" column="24101" selection-start-line="0" selection-start-column="24101" selection-end-line="0" selection-end-column="24101" />
+          <caret line="0" column="24148" selection-start-line="0" selection-start-column="24148" selection-end-line="0" selection-end-column="24148" />
+          <caret line="1" column="354014" selection-start-line="1" selection-start-column="354014" selection-end-line="1" selection-end-column="354014" />
+          <caret line="1" column="373971" selection-start-line="1" selection-start-column="373971" selection-end-line="1" selection-end-column="373971" />
+          <caret line="1" column="374412" selection-start-line="1" selection-start-column="374412" selection-end-line="1" selection-end-column="374412" />
+          <caret line="1" column="374700" selection-start-line="1" selection-start-column="374700" selection-end-line="1" selection-end-column="374700" />
+          <caret line="1" column="375263" selection-start-line="1" selection-start-column="375263" selection-end-line="1" selection-end-column="375263" />
+          <caret line="1" column="375397" selection-start-line="1" selection-start-column="375397" selection-end-line="1" selection-end-column="375397" />
+          <caret line="1" column="388560" selection-start-line="1" selection-start-column="388560" selection-end-line="1" selection-end-column="388560" />
+          <caret line="5" column="43775" selection-start-line="5" selection-start-column="43775" selection-end-line="5" selection-end-column="43775" />
+          <caret line="5" column="58326" selection-start-line="5" selection-start-column="58326" selection-end-line="5" selection-end-column="58326" />
+          <caret line="5" column="68128" selection-start-line="5" selection-start-column="68128" selection-end-line="5" selection-end-column="68128" />
+          <caret line="5" column="68149" selection-start-line="5" selection-start-column="68149" selection-end-line="5" selection-end-column="68149" />
+          <caret line="5" column="68883" selection-start-line="5" selection-start-column="68883" selection-end-line="5" selection-end-column="68883" />
+          <caret line="5" column="68904" selection-start-line="5" selection-start-column="68904" selection-end-line="5" selection-end-column="68904" />
+          <caret line="5" column="73600" selection-start-line="5" selection-start-column="73600" selection-end-line="5" selection-end-column="73600" />
+          <caret line="5" column="73672" selection-start-line="5" selection-start-column="73672" selection-end-line="5" selection-end-column="73672" />
+          <caret line="5" column="73870" selection-start-line="5" selection-start-column="73870" selection-end-line="5" selection-end-column="73870" />
+          <caret line="5" column="73891" selection-start-line="5" selection-start-column="73891" selection-end-line="5" selection-end-column="73891" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/advisory/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.36690646">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/backoffice/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.310345">
-          <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.9352518">
+          <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/dashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/user/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.714286">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#297#415#0#HTML" expanded="false" />
-            <element signature="e#362#397#0#HTML" expanded="true" />
-            <element signature="e#5624#8528#0#HTML" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0323741">
+          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/_includes/styles.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7927928">
-          <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.0323741">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/station/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0323741">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Laravel/Views/backoffice/_components/main-menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2589928">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>

@@ -4,9 +4,9 @@
   <div class="main-menu-header">
     <div class="user-panel">
       <div class="pull-center image">
-        <span class="avatar avatar-online"><img src="/backoffice/robust-assets/images/portrait/small/avatar-s-1.png" alt="avatar" class="img-circle"></span>
+        <span class="avatar avatar-online ml-3"><img src="/backoffice/robust-assets/images/portrait/small/avatar-s-1.png" alt="avatar" class="img-circle"></span>
       </div>
-      <div class="pull-left info">
+      <div class="ml-2 info">
         <p>{{ Auth::user()->name }}</p>
       </div>
     </div>

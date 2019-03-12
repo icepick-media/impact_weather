@@ -15,6 +15,9 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     height: 63px;
     padding-left: 10px;
 }
+.content-overflow{
+    overflow-x: hidden;
+}
 
 /*.content-header h1{*/
     /*margin-left: 27px;*/
@@ -87,4 +90,20 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .donutchart{
     width: 334px;
     height: 180px;
+}
+/*user eddt profile*/
+.content-body{
+    margin-left: -12px;
+    margin-right: -11px;
+}
+.new-station-details{
+    width:100%;
+    /*margin-left: 8px;*/
+}
+.pagination-item{
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #0071bc;
+    border-color: #0071bc;
 }
