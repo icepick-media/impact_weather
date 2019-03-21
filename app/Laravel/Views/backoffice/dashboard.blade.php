@@ -293,13 +293,13 @@
 
 
 @section('vendor-css')
-<!-- <link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/charts/jquery-jvectormap-2.0.3.css">
+<link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/charts/jquery-jvectormap-2.0.3.css">
 <link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/charts/morris.css">
-<link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/extensions/unslider.css"> -->
+<link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/extensions/unslider.css">
 @stop
 
 @section('vendor-js')
-<!-- <script src="/backoffice/robust-assets/js/plugins/extensions/jquery.knob.min.js" type="text/javascript"></script>
+<script src="/backoffice/robust-assets/js/plugins/extensions/jquery.knob.min.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/components/extensions/knob.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/raphael-min.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/morris.min.js" type="text/javascript"></script>
@@ -308,7 +308,7 @@
 <script src="/backoffice/robust-assets/demo-data/jvector/visitor-data.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/chart.min.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/jquery.sparkline.min.js" type="text/javascript"></script>
-<script src="/backoffice/robust-assets/js/plugins/extensions/unslider-min.js" type="text/javascript"></script> -->
+<script src="/backoffice/robust-assets/js/plugins/extensions/unslider-min.js" type="text/javascript"></script>
 @stop
 
 @section('page-styles')
