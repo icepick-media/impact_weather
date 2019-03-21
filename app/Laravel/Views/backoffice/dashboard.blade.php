@@ -1,288 +1,305 @@
 @extends('backoffice._layouts.app')
 @section('content')
-<div class="robust-content content container-fluid content-overflow">
-	<section class="content-header">
-		<h1>Dashboard</h1>
-	</section>
-	<div class="content-wrapper">
-		<div class="content-body">
-			<div class="row">
-				{{--------GOOGLE-MAP---------}}
-				<div class="col-md-8 col-md-lg-12 col-xs-12">
-					<div id="map" style="height: 400px; width: 100%;"></div>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1> Dashboard </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+
+      <div class="active-box">
+        <div class="status">
+          <h4>{{$stations->count()}}</h4>
+          <h5>Active Stations</h5>
+        </div>
+        <div class="icon">
+          <i class="fa fa-wifi"> </i>
+        </div>
+      </div>
+		</section>
+		
+		<section class="col-lg-8 connectedSortable">
+			<div class="box box-success">
+				<div class="box-header with-border">
+					<!-- <h3 class="box-title">Visitors Report</h3> -->
+					<div id="map"></div>
 				</div>
-					{{-------------CARD-SECTION----------------}}
-				<div class="col-md-4 col-md-lg-12 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon">
-							<i class="icon-location3 success font-large-2 text-center"></i>
-						</span>
+				<!-- /.box-header -->
+				
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box">
+						<div class="box-header with-border">
+							<h3 class="box-title"> Today's Activity Report ({{Carbon::now()->format("M d Y")}}) </h3>
+						</div>
+						<!-- /.box-header -->
+						<div class="box-body table-responsive">
+							<table class="table table-bordered">
+								<tr>
+										<th>User</th>
+										<th>Farm</th>
+										<th>Station ID</th>
+										<th>Activity</th>
+								</tr>
+								<tbody>
+									@if(!$journal->isEmpty())
+										@foreach($journal as $index => $activity)
+										<tr>
+											<td>
+												@if($activity->farm)
+												<a href="{{route('backoffice.user.edit',[$activity->farm->user_id])}}">{{$activity->farm?($activity->farm->owner?$activity->farm->owner->name:"n/a"):"n/a"}}</a>
+												@else
+												n/a
+												@endif
+											</td>
+											<td>
+												<div><small>{{Str::upper(($activity->farm?$activity->farm->name:"n/a") .": ".($activity->farm?$activity->farm->crop_display:"n/a"))}}</small></div>
+												@if($activity->farm)
+												<div><small><a href="{{route('backoffice.user.farm',[$activity->farm->user_id,$activity->farm->id])}}">[View Farm Profile]</a></small></div>
+												@endif
+											</td>
+											<td>
+												@if($activity->farm)
+												<a target="_blank" href="{{route('backoffice.station.edit',[$activity->farm->station_id])}}"><b>{{$activity->farm->station->code}}</b></a>
+												@else
+												n/a
+												@endif
+											</td>
+											<td>
+												<div><b>{{$activity->title}}</b></div>
+												@if($activity->brand)
+												<div><small>Brand : {{$activity->brand}}</small></div>
+												@endif
+												<div><small>Qty : {{$activity->qty}}</small></div>
+											</td>
+										</tr>
+										@endforeach
+									@endif
+			          </tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box">
+						<div class="box-header with-border">
+							<h3 class="box-title"> Registered Users </h3>
+						</div>
+						<!-- /.box-header -->
+						<div class="box-body register table-responsive">
+							<table class="table table-bordered" id="registeredUser">
+								<thead>
+									<tr>
+										<th style="width: 25%">Name</th>
+										<th style="width: 25%">No. of Farm</th>
+										<th style="width: 25%">Date Registered</th>
+										<th style="width: 25%">Last Login</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach($customers as $index => $user)
+										<tr>
+											<td><span><a href="{{route('backoffice.user.edit',[$user->id])}}">{{$user->name}}</a></span>
+											<div><small>{{ $user->email }}</small></div>
+											<div><small>{{ $user->contact }}</small></div>
+
+											</td>
+											<td>
+												<a href="{{route('backoffice.user.edit',[$user->id])}}">{{$user->num_farm}}</a>
+											<div>
+												<small>
+													@if($user->station_attached)
+													@foreach($user->station_attached as $index => $station)
+													<a target="_blank" href="{{ route('backoffice.station.edit', [$station]) }}">
+														<div>{{$index}}</div>
+													</a>
+													@endforeach
+													@endif
+												</small>
+											</div>
+											</td>
+											<td>{{$user->created_at->format("d M Y h:i A")}}</td>
+											<td>{{Helper::time_passed($user->last_activity)}}</td>
+										</tr>
+									@endforeach
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="col-lg-4 connectedSortable">
+			<div class="row">
+				<div class="col-xs-12">
+
+					<div class="dis-table">
+						<div class="info-box dis-table-cell">
+						<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+
 						<div class="info-box-content">
-							<span class="info-box-text">Active Stations</span>
-							<small><a href="{{route('backoffice.station.index')}}">[Manage stations]</a></small>
-							<h3 class="success">{{$stations->count()}}</h3>
+							<span class="info-box-text">  <b> Active Stations </b></span>
+							<span class="info-small"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span>
+							<span class="info-box-number">{{$stations->count()}}</span>
 						</div>
 						<!-- /.info-box-content -->
 					</div>
-					<div class="info-box">
-						<span class="info-box-icon"><i class="icon-user5 info font-large-2"></i></span>
+					<!-- /.info-box -->
+
+					<div class="info-box dis-table-cell">
+						<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+
 						<div class="info-box-content">
-							<span class="info-box-text">Today's Registrant</span>
-							<h3 class="info">{{$customers->where('created_at','>=',$date_today)->count()}}</h3>
-							{{--<span class="progress-description">--}}
-								{{--50% Increase in 30 Days--}}
-							{{--</span>--}}
+							<span class="info-box-text">  <b> Today's Registrant </b></span>
+							<span class="info-small"> </span>
+							<span class="info-box-number">{{$customers->where('created_at','>=',$date_today)->count()}}</span>
 						</div>
 						<!-- /.info-box-content -->
 					</div>
-					<div class="info-box">
-						<span class="info-box-icon"><i class="icon-user5 info font-large-2"></i></span>
+					<!-- /.info-box -->
+
+					<div class="info-box dis-table-cell">
+						<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+
 						<div class="info-box-content">
-							<span class="info-box-text">All App Users</span>
-							<h3 class="info">{{$customers->count()}}</h3>
-							{{--<span class="progress-description">--}}
-								{{--50% Increase in 30 Days--}}
-							{{--</span>--}}
+							<span class="info-box-text">  <b> All App Users </b></span>
+							<span class="info-small"></span>
+							<span class="info-box-number"> {{$customers->count()}} </span>
 						</div>
 						<!-- /.info-box-content -->
+					</div>  
 					</div>
-					{{--<div class="card-group card-dashboard-right">--}}
-						{{--<div class="card" style="font-size: 13px">--}}
-							{{--<div class="card-body text-center">--}}
-								{{--<div class="card-block">--}}
-									 {{--<div class="media ml-0">--}}
-										{{--<div class="  media-middle">--}}
-											{{--<i class="icon-location3 success font-large-2 text-center"></i>--}}
-										{{--</div>--}}
-										{{--<div class="media-body text-xs-center">--}}
-											{{--<span>Active Stations</span>--}}
-											{{--<small><a href="{{route('backoffice.station.index')}}">[Manage stations]</a></small>--}}
-										{{--</div>--}}
-										{{--<div class="media-bottom">--}}
-											{{--<h3 class="success">{{$stations->count()}}</h3>--}}
-										{{--</div>--}}
-									{{--</div>--}}
-									{{-- <progress class="progress progress-sm progress-success mt-1 mb-0" value="80" max="100"></progress> --}}
-								{{--</div>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-						{{--<div class="card" style="font-size: 13px">--}}
-							{{--<div class="card-body text-center">--}}
-								{{--<div class="card-block">--}}
-									{{--<div class="media ml-0">--}}
-										{{--<div class="media-middle">--}}
-											{{--<i class="icon-user5 info font-large-2"></i>--}}
-										{{--</div>--}}
-										{{--<div class="media-body text-xs-center">--}}
-											{{--<span>Today's Registrant</span>--}}
-										{{--</div>--}}
-										{{--<div class="media-bottom">--}}
-											{{--<h3 class="info">{{$customers->where('created_at','>=',$date_today)->count()}}</h3>--}}
-										{{--</div>--}}
-									{{--</div>--}}
-									{{-- <progress class="progress progress-sm progress-info mt-1 mb-0" value="35" max="100"></progress> --}}
-								{{--</div>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-						{{--<div class="card" style="font-size: 13px">--}}
-							{{--<div class="card-body text-center">--}}
-								{{--<div class="card-block">--}}
-									{{--<div class="media ml-0">--}}
-										{{--<div class="media-middle">--}}
-											{{--<i class="icon-user5 info font-large-2"></i>--}}
-										{{--</div>--}}
-										{{--<div class="media-body text-xs-center">--}}
-											{{--<span>All App Users</span>--}}
-										{{--</div>--}}
-										{{--<div class="media-bottom">--}}
-											{{--<h3 class="info">{{$customers->count()}}</h3>--}}
-										{{--</div>--}}
-									{{--</div>--}}
-									{{-- <progress class="progress progress-sm progress-info mt-1 mb-0" value="35" max="100"></progress> --}}
-								{{--</div>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-					{{--</div>--}}
-			    </div>
-				{{---------------CHART SECTION----------------}}
-
+					
+				</div>
+				<!-- /.col -->
+			
+				
+				<!-- /.col -->
 			</div>
+
 			<div class="row">
-				<div class="col-md-4 col-md-lg-12 col-xs-12 mt-1">
-					<div class="box box-danger">
+				<div class="col-xs-12">
+					<!-- jQuery Knob -->
+					<div class="box box-solid">
+						<div class="box-header">
+							
+							<h3 class="box-title">Harvest Window </h3>
+							<h6 class="date"> Tuesday, 12 February 2019 </h6>
+
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
+								</button>
+							</div>
+						</div>
+						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="donutchart" id="donutchart" width="334" height="180"></div>
+							<div class="row">
+								<div class="col-xs-12 text-center">
+										<div class="c100 p62 big">
+											<span>62%</span>
+											<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+							<!-- /.row -->
+
 						</div>
 						<!-- /.box-body -->
 					</div>
-					{{--<div class="col-md-8 col-md-lg-8 col-xs-8">--}}
-					{{--<div id="map" style="height: 400px; width: 100%;"></div>--}}
-					{{--</div>--}}
-				</div>
-				<div class="col-md-4 col-md-lg-12 col-xs-12 mt-1">
-					<div class="box box-danger">
+					<!-- /.box -->
+						<!-- jQuery Knob -->
+					<div class="box box-solid">
+						<div class="box-header">
+							
+							<h3 class="box-title">Harvest Window </h3>
+							<h6 class="date"> Tuesday, 12 February 2019 </h6>
+
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
+								</button>
+							</div>
+						</div>
+						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="donutchart" id="donutchart1" width="334" height="180"></div>
+							<div class="row">
+								<div class="col-xs-12 text-center">
+									<div class="c100 p75 big green">
+											<span>75%</span>
+											<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+							<!-- /.row -->
+
 						</div>
 						<!-- /.box-body -->
 					</div>
-				</div>
-				<div class="col-md-4 col-md-lg-12 col-xs-12 mt-1">
-					<div class="box box-danger">
+					<!-- /.box -->
+					<!-- jQuery Knob -->
+					<div class="box box-solid">
+						<div class="box-header">
+							
+							<h3 class="box-title">Harvest Window </h3>
+							<h6 class="date"> Tuesday, 12 February 2019 </h6>
+
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
+								</button>
+							</div>
+						</div>
+						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="donutchart" id="donutchart2" width="334" height="180"></div>
+							<div class="row">
+								<div class="col-xs-12 text-center">
+									<div class="c100 p50 big yellow">
+											<span>50%</span>
+											<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+							<!-- /.row -->
+
 						</div>
 						<!-- /.box-body -->
 					</div>
+					<!-- /.box -->
 				</div>
-			</div>
-			{{----------------TABLE-SECTION---------------}}
-			<div class="row">
-				<div class="col-md-12 col-md-lg-12 col-xs-12 pt-1">
-					<div class="card">
-			            <div class="card-header">
-			                <h4 class="card-title">Today's Activity Report ({{Carbon::now()->format("M d Y")}})</h4>
-			            </div>
-			            <div class="card-content">
-			                <div class="table-responsive">
-			                    <table class="table table-hover mb-0">
-			                        <thead>
-			                            <tr>
-			                                <th>User</th>
-			                                <th>Farm</th>
-			                                <th>Station ID</th>
-			                                <th>Activity</th>
-			                            </tr>
-			                        </thead>
-			                        <tbody>
-										@if(!$journal->isEmpty())
-											@foreach($journal as $index => $activity)
-											<tr>
-												<td>
-													@if($activity->farm)
-													<a href="{{route('backoffice.user.edit',[$activity->farm->user_id])}}">{{$activity->farm?($activity->farm->owner?$activity->farm->owner->name:"n/a"):"n/a"}}</a>
-													@else
-													n/a
-													@endif
-												</td>
-												<td>
-													<div><small>{{Str::upper(($activity->farm?$activity->farm->name:"n/a") .": ".($activity->farm?$activity->farm->crop_display:"n/a"))}}</small></div>
-													@if($activity->farm)
-													<div><small><a href="{{route('backoffice.user.farm',[$activity->farm->user_id,$activity->farm->id])}}">[View Farm Profile]</a></small></div>
-													@endif
-												</td>
-												<td>
-													@if($activity->farm)
-													<a target="_blank" href="{{route('backoffice.station.edit',[$activity->farm->station_id])}}"><b>{{$activity->farm->station->code}}</b></a>
-													@else
-													n/a
-													@endif
-												</td>
-												<td>
-													<div><b>{{$activity->title}}</b></div>
-													@if($activity->brand)
-													<div><small>Brand : {{$activity->brand}}</small></div>
-													@endif
-													<div><small>Qty : {{$activity->qty}}</small></div>
-												</td>
-											</tr>
-											@endforeach
-										@endif
-			                        </tbody>
-			                    </table>
-			                </div>
-			            </div>
-			            <div class="card-footer">
-			            	<table class="table table-hovered table-striped">
-			            		<tr>
-			            			<td>Fertilizer</td>
-			            			<td><b>{{$journal->where('title','Fertilizer')->count()}}</b></td>
-			            			<td>Spray</td>
-			            			<td><b>{{$journal->where('title','Spray')->count()}}</b></td>
-			            			<td>Irrigation</td>
-			            			<td><b>{{$journal->where('title','Irrigation')->count()}}</b></td>
-			            		</tr>
-			            	</table>
-			            </div>
-			        </div>
-				</div>
-
-
-				{{--------------TABLE-SECTION-2-----------}}
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-md-lg-12 col-xs-12">
-					<div class="card">
-			            <div class="card-header">
-			                <h4 class="card-title">Registered Users</h4>
-			            </div>
-			            <div class="card-content">
-			                <div class="table-responsive">
-			                    <table class="table no-margin">
-			                        <thead>
-			                            <tr>
-			                                <th>Name</th>
-			                                <th>No. of Farm</th>
-			                                <th>Date Registered</th>
-			                                <th>Last Login</th>
-			                            </tr>
-			                        </thead>
-			                        <tbody>
-			                        	@foreach($customers as $index => $user)
-			                            <tr>
-			                                <td><span><a href="{{route('backoffice.user.edit',[$user->id])}}">{{$user->name}}</a></span>
-		                                	<div><small>{{ $user->email }}</small></div>
-		                                	<div><small>{{ $user->contact }}</small></div>
-
-			                                </td>
-			                                <td>
-			                                	<a href="{{route('backoffice.user.edit',[$user->id])}}">{{$user->num_farm}}</a>
-			                               	<div>
-			                               	  <small>
-			                               	    @if($user->station_attached)
-			                               	    @foreach($user->station_attached as $index => $station)
-			                               	    <a target="_blank" href="{{ route('backoffice.station.edit', [$station]) }}">
-			                               	      <div>{{$index}}</div>
-			                               	    </a>
-			                               	    @endforeach
-			                               	    @endif
-			                               	  </small>
-			                               	</div>
-			                                </td>
-			                                <td>{{$user->created_at->format("d M Y h:i A")}}</td>
-			                                <td>{{Helper::time_passed($user->last_activity)}}</td>
-			                            </tr>
-			                            @endforeach
-			                        </tbody>
-			                    </table>
-			                </div>
-			            </div>
-			        </div>
-				</div>
-				{{--<div class="col-xl-4 col-lg-12 col-md-12 mt-1">--}}
-					{{--<div class="box box-danger">--}}
-						{{--<div class="box-body">--}}
-							{{--<div id="donutchart2" style="width: 357px; height: 200px;"></div>--}}
-						{{--</div>--}}
-						{{--<!-- /.box-body -->--}}
-					{{--</div>--}}
-				{{--</div>--}}
-			</div>
-
-		</div>
-	</div>
+				<!-- /.col -->
+			</div>  
+		</section>
 </div>
 @stop
 
 
 @section('vendor-css')
-<link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/charts/jquery-jvectormap-2.0.3.css">
+<!-- <link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/charts/jquery-jvectormap-2.0.3.css">
 <link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/charts/morris.css">
-<link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/extensions/unslider.css">
+<link rel="stylesheet" type="text/css" href="/backoffice/robust-assets/css/plugins/extensions/unslider.css"> -->
 @stop
 
 @section('vendor-js')
-<script src="/backoffice/robust-assets/js/plugins/extensions/jquery.knob.min.js" type="text/javascript"></script>
+<!-- <script src="/backoffice/robust-assets/js/plugins/extensions/jquery.knob.min.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/components/extensions/knob.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/raphael-min.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/morris.min.js" type="text/javascript"></script>
@@ -291,7 +308,7 @@
 <script src="/backoffice/robust-assets/demo-data/jvector/visitor-data.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/chart.min.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/plugins/charts/jquery.sparkline.min.js" type="text/javascript"></script>
-<script src="/backoffice/robust-assets/js/plugins/extensions/unslider-min.js" type="text/javascript"></script>
+<script src="/backoffice/robust-assets/js/plugins/extensions/unslider-min.js" type="text/javascript"></script> -->
 @stop
 
 @section('page-styles')
@@ -299,6 +316,11 @@
 @stop
 
 @section('page-scripts')
+<script>
+$(document).ready( function () {
+    $('#registeredUser').DataTable();
+} );
+</script>
 <script src="/backoffice/robust-assets/js/components/pages/dashboard-analytics.js" type="text/javascript"></script>
 <script src="/backoffice/robust-assets/js/components/pages/dashboard-project.js" type="text/javascript"></script>
 
