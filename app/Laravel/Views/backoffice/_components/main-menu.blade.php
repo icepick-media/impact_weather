@@ -35,7 +35,7 @@
             <li><a href="{{ route('backoffice.advisory.trash') }}"><i class="fa fa-trash-o"></i> Trash</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-calendar"></i>
             <span>Work Planner</span>
@@ -48,9 +48,9 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Planner 2</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Planner 3</a></li>
           </ul>
-        </li>
+        </li> -->
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Harvesting</span>
             <span class="pull-right-container">
@@ -62,8 +62,8 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Harvesting 2</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Harvesting 3</a></li>
           </ul>
-        </li>
-        <li class="treeview">
+        </li> -->
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i> <span>Nutrient Management</span>
             <span class="pull-right-container">
@@ -74,9 +74,9 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Management 1</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Management 2</a></li>
           </ul>
-        </li>
+        </li> -->
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-search"></i> <span>Pest & Disease</span>
             <span class="pull-right-container">
@@ -87,7 +87,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Management 1</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Management 2</a></li>
           </ul>
-        </li>
+        </li> -->
 
         <li class="treeview">
           <a href="#">
@@ -144,7 +144,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-cloud"></i> <span>Forecasts & Alerts</span>
             <span class="pull-right-container">
@@ -157,9 +157,9 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Alert Triggers</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Row Data</a></li>
           </ul>
-        </li>
+        </li> -->
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>Worker Management</span>
             <span class="pull-right-container">
@@ -172,7 +172,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Management 3</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Management 4</a></li>
           </ul>
-        </li>
+        </li> -->
 
         <li class="treeview">
           <a href="{{ route('backoffice.report.index') }}">

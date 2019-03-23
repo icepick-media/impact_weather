@@ -2053,7 +2053,7 @@ a:focus {
   max-width: 100%;
 }
 .info-box-content {
-  padding: 10px;
+  padding: 5px;
   text-align: center;
 }
 .info-box-number {
@@ -2068,7 +2068,7 @@ a:focus {
 .info-box-text {
   display: block;
   font-size: 14px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
 }
