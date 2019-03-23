@@ -302,15 +302,35 @@
 <script>
 	// Initialize and add the map
 	function initMap() {
-		// The location of Uluru
-		var uluru = {lat: -25.344, lng: 131.036};
-		// The map, centered at Uluru
-		var map = new google.maps.Map(
-				document.getElementById('map'), {zoom: 13, center: uluru});
-		// The marker, positioned at Uluru
-		var marker = new google.maps.Marker({position: uluru, map: map});
+		var locations = [
+			$stations = {!! str_replace("'", "\'", json_encode($stations)) !!}
+    ];
+				
+		var center = {lat: 16.726095, lng: 120.835003};
+
+		var infowindow =  new google.maps.InfoWindow({});
+		var marker, count;
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 9,
+			center: center
+		});
+		for (count = 0; count < locations[0].length; count++) {
+			marker = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[0][count].geo_lat, locations[0][count].geo_long),
+					map: map,
+					title: locations[0][count].name
+			});	
+
+			google.maps.event.addListener(marker, 'click', (function (marker, count) {
+				return function () {
+					infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/>'+locations[0][count].name);
+					infowindow.open(map, marker);
+				}
+			})(marker, count));
+		}
 	}
 </script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js={{  env('GOOGLE_MAP_KEY') }}&callback=initMap" type="text/javascript"></script> -->
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCousCXpGocpQN0LuBCSzLCHUsMm2jDbP4&callback=initMap">   </script>
 
 @stop
@@ -325,3 +345,41 @@
 	} );
 </script>
 @stop
+
+<!-- <script src="http://maps.google.com/maps/api/js?key={{  env('GOOGLE_MAP_KEY') }}" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+      	var locations = [
+			$stations = {!! str_replace("'", "\'", json_encode($stations)) !!}
+          ];
+		  console.log(locations);
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 9,
+			center: new google.maps.LatLng(
+				$stations.length > 0 ? $stations[0].geo_lat : 0, 
+				$stations.length > 0 ? $stations[0].geo_long : 0
+			),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          });
+
+          var infowindow = new google.maps.InfoWindow();
+
+          var marker, i;
+
+          for (i = 0; i < locations.length; i++) { 
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+              map: map
+              // icon : "http://static.metos.at/img/station-user.png"
+            });
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+              }
+            })(marker, i));
+          }})
+
+</script> -->
