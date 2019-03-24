@@ -35,6 +35,10 @@
 							<div class="box">
 								<div class="box-header with-border">
 									<h3 class="box-title"> Today's Activity Report ({{Carbon::now()->format("M d Y")}}) </h3>
+									<div class="box-tools pull-right">
+										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
+										</button>
+									</div>
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body table-responsive">
@@ -91,6 +95,10 @@
 							<div class="box">
 								<div class="box-header with-border">
 									<h3 class="box-title"> Registered Users </h3>
+									<div class="box-tools pull-right">
+										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
+										</button>
+									</div>
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body register table-responsive">
