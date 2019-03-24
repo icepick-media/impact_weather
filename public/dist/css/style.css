@@ -5130,8 +5130,8 @@ table.text-center th {
 }
 
 .login-page .right-box img{
-  width: 170px;
-  height: auto;
+  width: auto;
+  height: 150px;
 }
 
 .login-box-body  .input-group{
