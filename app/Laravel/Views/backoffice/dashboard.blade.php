@@ -5,7 +5,7 @@
     <section class="content-header">
       <h1> Dashboard </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
 
@@ -23,8 +23,8 @@
 		<div class="content">
 			<div class="row">
 				<section class="col-lg-8">
-					<div class="box box-success">
-						<div class="box-header with-border">
+					<div class="box">
+						<div class="box-header">
 							<div id="map"></div>
 						</div>
 						
@@ -142,41 +142,38 @@
 					<div class="row">
 						<div class="col-xs-12">
 		
-							<div class="dis-table">
-								<div class="info-box dis-table-cell">
-								<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
-		
-								<div class="info-box-content">
-									<span class="info-box-text">  <b> Active Stations </b></span>
-									<span class="info-small"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span>
-									<span class="info-box-number">{{$stations->count()}}</span>
+							<div class="box dis-table">
+								<div class="dis-table-cell">
+									<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+			
+									<div class="info-box-content">
+										<span class="info-box-text">  <b> Active Stations </b></span>
+										<span class="info-small" style="font-size: 10px;"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span>
+										<span class="info-box-number">{{$stations->count()}}</span>
+									</div>
 								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
 		
-							<div class="info-box dis-table-cell">
-								<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
-		
-								<div class="info-box-content">
-									<span class="info-box-text">  <b> Today's Registrant </b></span>
-									<span class="info-small"> </span>
-									<span class="info-box-number">{{$customers->where('created_at','>=',$date_today)->count()}}</span>
+								<div class="dis-table-cell">
+									<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+			
+									<div class="info-box-content">
+										<span class="info-box-text">  <b> Today's Registrant </b></span>
+										<span class="info-small"> </span>
+										<span class="info-box-number">{{$customers->where('created_at','>=',$date_today)->count()}}</span>
+									</div>
+									<!-- /.info-box-content -->
 								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
 		
-							<div class="info-box dis-table-cell">
-								<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
-		
-								<div class="info-box-content">
-									<span class="info-box-text">  <b> All App Users </b></span>
-									<span class="info-small"></span>
-									<span class="info-box-number"> {{$customers->count()}} </span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>  
+								<div class="dis-table-cell">
+									<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+			
+									<div class="info-box-content">
+										<span class="info-box-text">  <b> All App Users </b></span>
+										<span class="info-small"></span>
+										<span class="info-box-number"> {{$customers->count()}} </span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>  
 							</div>
 							
 						</div>
