@@ -1,8 +1,8 @@
-<a href="index2.html" class="logo">
+<a href="/" class="logo">
   <!-- mini logo for sidebar mini 50x50 pixels -->
-  <span class="logo-mini"><b>P</b>alm</span>
+  <span class="logo-mini"><img src="/dist/img/icon-logo.png"/></span>
   <!-- logo for regular state and mobile devices -->
-  <span class="logo-lg"> prcisionpalm </span>
+  <span class="logo-lg"> <img src="/dist/img/in-logo.png"/> </span>
 </a>
 <nav class="navbar navbar-static-top">
   <!-- Sidebar toggle button-->

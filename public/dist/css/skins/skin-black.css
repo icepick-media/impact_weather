@@ -4,8 +4,8 @@
  */
 /* skin-black navbar */
 .skin-black .main-header {
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 10px 5px 5px rgba(136, 136, 136, 0.4);
+  box-shadow: 10px 5px 5px rgba(136, 136, 136, 0.4);
 }
 .skin-black .main-header .navbar-toggle {
   color: #333;
@@ -16,6 +16,7 @@
 }
 .skin-black .main-header .navbar {
   background-color: #ffffff;
+  padding-left: 20px;
 }
 .skin-black .main-header .navbar .nav > li > a {
   color: #333333;
@@ -38,22 +39,23 @@
   background: #ffffff;
 }
 .skin-black .main-header .navbar > .sidebar-toggle {
-  color: #333;
-  border-right: 1px solid #eee;
+  color: #ccc;
+      font-size: 21px;
+  /*border-right: 1px solid #eee;*/
 }
 .skin-black .main-header .navbar .navbar-nav > li > a {
-  border-right: 1px solid #eee;
+  /*border-right: 1px solid #eee;*/
 }
 .skin-black .main-header .navbar .navbar-custom-menu .navbar-nav > li > a,
 .skin-black .main-header .navbar .navbar-right > li > a {
-  border-left: 1px solid #eee;
+  /*border-left: 1px solid #eee;*/
   border-right-width: 0;
 }
 .skin-black .main-header .logo {
   background-color: #ffffff;
   color: #333333;
   border-bottom: 0 solid transparent;
-  border-right: 1px solid #eee;
+  /*border-right: 1px solid #eee;*/
 }
 .skin-black .main-header .logo:hover {
   background-color: #fcfcfc;
@@ -73,13 +75,13 @@
   background-color: #222;
 }
 .skin-black .content-header {
-  background: transparent;
+  background: #fff;
   box-shadow: none;
 }
 .skin-black .wrapper,
 .skin-black .main-sidebar,
 .skin-black .left-side {
-  background-color: #222d32;
+  background-color: #333;
 }
 .skin-black .user-panel > .info,
 .skin-black .user-panel > .info > a {
@@ -96,7 +98,7 @@
 .skin-black .sidebar-menu > li.active > a,
 .skin-black .sidebar-menu > li.menu-open > a {
   color: #ffffff;
-  background: #1e282c;
+  background: #211d1d;
 }
 .skin-black .sidebar-menu > li.active > a {
   border-left-color: #ffffff;
@@ -106,7 +108,7 @@
   background: #2c3b41;
 }
 .skin-black .sidebar a {
-  color: #b8c7ce;
+  color: #cacaca;
 }
 .skin-black .sidebar a:hover {
   text-decoration: none;

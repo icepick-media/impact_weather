@@ -22,7 +22,7 @@
 
 		<div class="content">
 			<div class="row">
-				<section class="col-lg-8 connectedSortable">
+				<section class="col-lg-8">
 					<div class="box box-success">
 						<div class="box-header with-border">
 							<div id="map"></div>
@@ -138,7 +138,7 @@
 					</div>
 				</section>
 		
-				<section class="col-lg-4 connectedSortable">
+				<section class="col-lg-4">
 					<div class="row">
 						<div class="col-xs-12">
 		

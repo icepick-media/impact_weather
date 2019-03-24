@@ -9,7 +9,7 @@
     @yield('page-styles')
   </head>
 
-  <body class="hold-transition skin-blue sidebar-mini abc">
+  <body class="fixed hold-transition skin-black sidebar-mini">
     <div class="wrapper">
 
       <header class="main-header">

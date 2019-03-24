@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="/dist/css/style.css">
  
-  <link rel="stylesheet" href="/dist/css/skins/_all-skins.css">
+  <link rel="stylesheet" href="/dist/css/skins/skin-black.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="/bower_components/morris.js/morris.css">
   <!-- jvectormap -->
