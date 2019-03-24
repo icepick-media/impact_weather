@@ -47,7 +47,7 @@
 <script src="/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- page script -->
 
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
