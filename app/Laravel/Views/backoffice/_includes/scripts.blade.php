@@ -48,6 +48,8 @@
 <!-- page script -->
 
 <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables.net/js/dataTables.bootstrap.min.js"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
