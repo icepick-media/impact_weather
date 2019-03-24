@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="info">
           <p>{{ Auth::user()->name }}</p>
@@ -22,7 +22,7 @@
         </li>
        
         <li class="treeview">
-          <a href="#">
+          <a href="{{ route('backoffice.index') }}">
             <i class="fa fa-map-marker"></i>
             <span>Advisory</span>
             <span class="pull-right-container">

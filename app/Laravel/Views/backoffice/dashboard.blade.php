@@ -330,7 +330,7 @@
 		}
 	}
 </script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js={{  env('GOOGLE_MAP_KEY') }}&callback=initMap" type="text/javascript"></script> -->
+<!-- <script src="http://maps.google.com/maps/api/js?key={{  env('GOOGLE_MAP_KEY') }}&callback=initMap" type="text/javascript"></script> -->
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCousCXpGocpQN0LuBCSzLCHUsMm2jDbP4&callback=initMap">   </script>
 
 @stop

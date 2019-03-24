@@ -1,109 +1,90 @@
 @extends('backoffice._layouts.app')
 @section('content')
-<div class="robust-content content container-fluid">
-  <div class="content-wrapper">
-    <div class="content-header1 row">
-      <div class="content-header-left col-md-6 col-xs-12">
-        <h3 class="content-header-title mb-0">Add new Crop</h3>
-        {{--<p class="text-muted mb-0">Add a new crop to your mobile application.</p>--}}
-        <div class="breadcrumb-wrapper col-xs-12 breadcrumb-top-dashboard">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('backoffice.crop.index') }}">Crops</a></li>
-            <li class="breadcrumb-item active">Add new</li>
-          </ol>
-        </div>
-      </div>
-      <div class="content-header-right col-md-6 col-xs-12">
-        <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1">
-          <a href="{{ route('backoffice.crop.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
-          <a href="{{ route('backoffice.crop.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
-        </div>
-      </div>
-      <div class="content-header-lead col-xs-12 mt-1">
-        <p class="lead">
-          {{-- Page Lead Paragraph --}}
-        </p>
+
+<div class="content-wrapper">
+
+  <section class="content-header">
+    <h1> Add new Crop </h1>
+    <ol class="breadcrumb">
+      <li><a href="{{ route('backoffice.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="{{ route('backoffice.crop.index') }}"><i class="fa fa-dashboard"></i> Crops</a></li>
+      <li class="active">Create</li>
+    </ol>
+
+    <div class="active-box">
+      <div class="status">
+        <a href="{{ route('backoffice.crop.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
+        <a href="{{ route('backoffice.crop.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
       </div>
     </div>
-    <div class="content-body">
-      <section id="horizontal-form-layouts">
+  </section>
+  
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-12 connectedSortable">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title" id="horz-layout-basic">Crop Details</h4>
-                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                <div class="heading-elements">
-                  <ul class="list-inline mb-0">
-                    <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
-                    <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                    <li><a data-action="close"><i class="icon-cross2"></i></a></li>
-                  </ul>
-                </div>
+            <div class="box">
+              <div class="box-header with-border">
+                <h3 class="box-title"> Crop Details </h3>
               </div>
-              <div class="card-body collapse in">
-                <div class="card-block">
-                  <div class="card-text">
-                    {{--  <p>This is where you enter the details of your page. Make sure to enter the data asked for each field. All fields marked with <code>*</code> are required.</p> --}}
+              <!-- /.box-header -->
+              <div class="box-body">
+                <form class="form form-horizontal" method="post" enctype="multipart/form-data">
+
+                  <div class="form-body">
+
+                    {{ csrf_field() }}
+
+                    <div class="form-group {{ $errors->has('name') ? "has-danger" : NULL }} row">
+                      <label class="col-md-2 label-control" for="name">Name (eg Corn)</label>
+                      <div class="col-md-9">
+                        <input type="text" id="name" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}">
+                        @if($errors->has('name')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('name') }}</small></p> @endif
+                      </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('code') ? "has-danger" : NULL }} row">
+                      <label class="col-md-2 label-control" for="code">Crop Code (eg. corn)</label>
+                      <div class="col-md-9">
+                        <input type="text" id="code" class="form-control" placeholder="code" name="code" value="{{ old('code') }}">
+                        @if($errors->has('code')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('code') }}</small></p> @endif
+                      </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('variety') ? "has-danger" : NULL }} row">
+                      <label class="col-md-2 label-control" for="variety">Crop Varieties</label>
+                      <div class="col-md-9">
+                        <input type="text" id="variety" class="form-control" placeholder="variety" name="variety" value="{{ old('variety') }}">
+                        @if($errors->has('variety')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('variety') }}</small></p> @endif
+                      </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('status') ? "has-danger" : NULL }} row">
+                      <label class="col-md-2 label-control" for="status">Allow to choose in app</label>
+                      <div class="col-md-9">
+                        {!! Form::select('status', $statuses, old('status'), ['class' => "form-control"]) !!}
+                        @if($errors->has('status')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('status') }}</small></p> @endif
+                      </div>
+                    </div>
+
                   </div>
-                  <form class="form form-horizontal" method="post" enctype="multipart/form-data">
 
-                    <div class="form-body">
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-radius mr-1">
+                      <i class="icon-check2"></i> Save
+                    </button>
+                    <a href="{{ route('backoffice.crop.index') }}" class="btn btn-danger btn-trash">
+                      <i class="icon-cross2"></i> Cancel
+                    </a>
+                  </div>
+                </form>
 
-                      {{ csrf_field() }}
-
-                      <div class="form-group {{ $errors->has('name') ? "has-danger" : NULL }} row">
-                        <label class="col-md-2 label-control" for="name">Name (eg Corn)</label>
-                        <div class="col-md-9">
-                          <input type="text" id="name" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}">
-                          @if($errors->has('name')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('name') }}</small></p> @endif
-                        </div>
-                      </div>
-
-                      <div class="form-group {{ $errors->has('code') ? "has-danger" : NULL }} row">
-                        <label class="col-md-2 label-control" for="code">Crop Code (eg. corn)</label>
-                        <div class="col-md-9">
-                          <input type="text" id="code" class="form-control" placeholder="code" name="code" value="{{ old('code') }}">
-                          @if($errors->has('code')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('code') }}</small></p> @endif
-                        </div>
-                      </div>
-
-                      <div class="form-group {{ $errors->has('variety') ? "has-danger" : NULL }} row">
-                        <label class="col-md-2 label-control" for="variety">Crop Varieties</label>
-                        <div class="col-md-9">
-                          <input type="text" id="variety" class="form-control" placeholder="variety" name="variety" value="{{ old('variety') }}">
-                          @if($errors->has('variety')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('variety') }}</small></p> @endif
-                        </div>
-                      </div>
-
-                      <div class="form-group {{ $errors->has('status') ? "has-danger" : NULL }} row">
-                        <label class="col-md-2 label-control" for="status">Allow to choose in app</label>
-                        <div class="col-md-9">
-                          {!! Form::select('status', $statuses, old('status'), ['class' => "form-control"]) !!}
-                          @if($errors->has('status')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('status') }}</small></p> @endif
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div class="form-actions">
-                      <button type="submit" class="btn btn-info btn-radius mr-1">
-                        <i class="icon-check2"></i> Save
-                      </button>
-                      <a href="{{ route('backoffice.crop.index') }}" class="btn btn-danger btn-trash">
-                        <i class="icon-cross2"></i> Cancel
-                      </a>
-                    </div>
-                  </form>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- // Basic form layout section end -->
+      </div>
     </div>
   </div>
 </div>

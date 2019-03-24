@@ -3240,6 +3240,7 @@ table.text-center th {
  * Page: Login & Register
  * ----------------------
  */
+ 
 .login-logo,
 .register-logo {
   font-size: 35px;
@@ -3251,7 +3252,10 @@ table.text-center th {
 .register-logo a {
   color: #444;
 }
-.login-page,
+.login-page {
+  background: #ffffff;
+}
+
 .register-page {
   background: #d2d6de;
 }
@@ -5085,4 +5089,56 @@ table.text-center th {
 .register table tr td p{
   margin: 0;
   margin: 1px 0;
+}
+
+
+.login-box{
+  padding: 80px 0px;
+}
+
+.login-box .checkbox.icheck{ 
+  margin: 0;
+}
+
+.login-box .form-group{
+  margin-bottom: 20px;
+}
+
+.login-box .btn-block{
+  margin-top: 15px;
+}
+
+.dis-inline{
+  display: inline-block;
+}
+
+.login-page{
+  font-size: 0;
+}
+
+.login-page img{
+  width: 100%;
+}
+
+.login-page .left-box{
+  width: 70%;
+}
+.login-page .right-box{
+  width: 30%;
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.login-page .right-box img{
+  width: 170px;
+  height: auto;
+}
+
+.login-box-body  .input-group{
+  margin-bottom: 20px; 
+  width: 100%;
+}
+
+.login-box-body .input-group .input-group-addon{
+  width: 37px;
 }

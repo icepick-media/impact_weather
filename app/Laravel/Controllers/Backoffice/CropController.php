@@ -80,7 +80,7 @@ class CropController extends Controller
     }
 
     public function trash() {
-        $this->data['activitiss'] = Crop::onlyTrashed()->orderBy('deleted_at', "DESC")->get();
+        $this->data['crops'] = Crop::onlyTrashed()->orderBy('deleted_at', "DESC")->get();
         return view('backoffice.crop.trash', $this->data);
     }
 

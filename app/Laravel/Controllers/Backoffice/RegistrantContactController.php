@@ -82,7 +82,7 @@ class RegistrantContactController extends Controller
     }
 
     public function trash() {
-        $this->data['activitiss'] = RegistrantContact::onlyTrashed()->orderBy('deleted_at', "DESC")->get();
+        $this->data['registrants'] = RegistrantContact::onlyTrashed()->orderBy('deleted_at', "DESC")->get();
         return view('backoffice.registrant.trash', $this->data);
     }
 

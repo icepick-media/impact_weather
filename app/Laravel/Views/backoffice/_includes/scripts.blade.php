@@ -49,4 +49,6 @@
 
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 @yield('vendor-js')
