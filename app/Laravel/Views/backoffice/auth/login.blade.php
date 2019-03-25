@@ -2,12 +2,13 @@
 @section('content')
     <div class="login-page">
         <div class="dis-inline left-box">
-                <img src="/dist/img/login-img.png">  
+            <img src="/dist/img/login-img.png"> 
         </div>
         <div class="dis-inline right-box">
             <div class="login-box">
                 <div class="login-logo">
-                    <a href="#"> <img src="/dist/img/logo.png"> </a>
+                    <a href="/" class="hidden-xs hidden-sm"> <img src="/dist/img/logo.png"> </a>
+                    <a href="/" class="hidden-lg hidden-md"> <img src="/dist/img/logo-mobile.png"> </a>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">

@@ -117,12 +117,7 @@ img{
 .fixed .right-side {
   padding-top: 75px;
 }
-@media (max-width: 767px) {
-  .fixed .content-wrapper,
-  .fixed .right-side {
-    padding-top: 100px;
-  }
-}
+
 .fixed.layout-boxed .wrapper {
   max-width: 100%;
 }
@@ -331,7 +326,7 @@ a:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 12px;
-  padding: 7px 5px;
+  padding: 7px 0px;
   border-radius: 2px;
 }
 .content-header > .breadcrumb > li > a {
@@ -354,8 +349,6 @@ a:focus {
     top: 0;
     right: 0;
     float: none;
-    background: #d2d6de;
-    padding-left: 10px;
   }
   .content-header > .breadcrumb li:before {
     color: #97a0b3;
@@ -2062,14 +2055,14 @@ a:focus {
   border-bottom-left-radius: 2px;
   display: block;
   text-align: center;
-  font-size: 45px;
-  line-height: 90px;
+  font-size: 32px;
+  line-height: 80px;
 }
 .info-box-icon > img {
   max-width: 100%;
 }
 .info-box-content {
-  padding: 0 10px;
+  padding: 0 5px;
   text-align: center;
 }
 .info-box-number {
@@ -2078,15 +2071,24 @@ a:focus {
   font-size: 34px;
   line-height: 1;
       margin-top: 15px;
+      color: #4D4D4D;
 }
 
 .progress-description,
 .info-box-text {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   /*white-space: nowrap;*/
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.info-box-text b{
+  color: #666666;
+}
+.info-box-content .info-small{
+  color: #b3b3b3;
+  font-size: 10px;
 }
 .info-box-text {
   text-transform: uppercase;
@@ -3278,13 +3280,7 @@ table.text-center th {
   width: 360px;
       margin: 0% auto;
 }
-@media (max-width: 768px) {
-  .login-box,
-  .register-box {
-    width: 90%;
-    margin-top: 20px;
-  }
-}
+
 .login-box-body,
 .register-box-body {
   /*background: #fff;*/
@@ -5037,13 +5033,14 @@ table.text-center th {
 
 .navbar-custom-menu .date h4{
   font-size: 14px;
-      margin: 17px 0;
+      margin: 18px 0;
+      color: #b3b3b3;
 
 }
 
  
 .dis-table .info-box-icon .ion{
-  background-color: #0d9702;
+  background-color: #49af35;
     padding: 10px 15px;
     border-radius: 50%;
     color: #fff;
@@ -5080,10 +5077,15 @@ table.text-center th {
 .active-box .icon .fa {
     font-size: 40px;
     padding: 0 10px;
-    color: #0d9702;
+    color: #49af35;
 }
 .active-box .status h4{
-  color: #0d9702; 
+  color: #49af35;
+  font-weight: 600; 
+}
+
+.active-box .status h5{
+  color: #ccc; 
 }
 .active-box .status h4,
 .active-box .status h5{
@@ -5139,7 +5141,7 @@ table.text-center th {
 }
 .login-page .right-box{
   width: 30%;
-  font-size: 16px;
+  font-size: 14px;
   vertical-align: top;
 }
 
@@ -5158,6 +5160,99 @@ table.text-center th {
 }
 
 
-.connectedSortable .dis-table-cell{
+.connected .dis-table-cell{
   width: 33.3333333%;
+}
+
+.connected .dis-table-cell + .dis-table-cell{
+  border-left: 1px solid #ccc;
+}
+
+.breadcrumb li.active a{
+  color: #0071bc;
+}
+
+.breadcrumb>li {
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .fixed .content-wrapper,
+  .fixed .right-side {
+    padding-top: 125px;
+  }
+
+  .logo-lg img{
+    width: auto;
+    height: 47px;
+  }
+
+  .active-box{
+    right: 0;
+    top:25px;
+  }
+
+  .active-box .icon .fa{
+    font-size: 25px;
+  }
+
+  .main-header .sidebar-toggle{
+        padding: 10px 15px;
+  }
+
+  .navbar .search-input{
+    padding: 14px 15px;
+  }
+
+  .main-header .navbar-custom-menu, .main-header .navbar-right{
+    padding: 0;
+  }
+
+  .main-header .navbar{
+    min-height: 50px;
+  }
+}
+
+
+
+@media (max-width: 991px){
+  .login-page .left-box{
+    display: none;
+  }
+
+  .login-page .right-box{
+    width: 100%;
+    font-size: 12px;
+    background-image: url(../img/login-img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .login-box,
+  .register-box {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.59);
+  }
+
+  .login-box .checkbox label,
+  .register-box .checkbox label,
+  .login-box  a,
+  .register-box  a {
+    color: #fff;
+}   
+
+.navbar-custom-menu > .navbar-nav > li.date{
+  display: none;
+}
+
+
+
+}
+
+
+@media (min-width: 768px) and  (max-width: 991px){
+  .login-box {
+    padding: 91px 24%;
+}
 }
