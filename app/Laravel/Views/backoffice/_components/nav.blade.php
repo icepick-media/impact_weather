@@ -22,8 +22,8 @@
       </li>
       <li class="dropdown messages-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-envelope-o"></i>
-          <span class="label label-success">4</span>
+          <img src="/dist/img/message.png">
+          <span class="label label-danger">4</span>
         </a>
         <ul class="dropdown-menu">
           <li class="header">You have 4 messages</li>
@@ -99,8 +99,8 @@
       <!-- Notifications: style can be found in dropdown.less -->
       <li class="dropdown notifications-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-bell-o"></i>
-          <span class="label label-warning">10</span>
+          <img src="/dist/img/bell.png">
+          <span class="label label-danger">10</span>
         </a>
         <ul class="dropdown-menu">
           <li class="header">You have 10 notifications</li>
@@ -138,6 +138,8 @@
           <li class="footer"><a href="#">View all</a></li>
         </ul>
       </li>
+
+      
       <!-- Tasks: style can be found in dropdown.less -->
     
       <!-- User Account: style can be found in dropdown.less -->
@@ -170,6 +172,10 @@
         </ul>
       </li>
       <!-- Control Sidebar Toggle Button -->
+
+      <li class="flag">
+        <img src="/dist/img/flag.png">
+      </li>
       
     </ul>
   </div>

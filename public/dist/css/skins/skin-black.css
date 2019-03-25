@@ -19,7 +19,7 @@
   padding-left: 20px;
 }
 .skin-black .main-header .navbar .nav > li > a {
-  color: #333333;
+  color: #ccc;
 }
 .skin-black .main-header .navbar .nav > li > a:hover,
 .skin-black .main-header .navbar .nav > li > a:active,
@@ -60,17 +60,7 @@
 .skin-black .main-header .logo:hover {
   background-color: #fcfcfc;
 }
-@media (max-width: 767px) {
-  .skin-black .main-header .logo {
-    background-color: #222222;
-    color: #ffffff;
-    border-bottom: 0 solid transparent;
-    border-right: none;
-  }
-  .skin-black .main-header .logo:hover {
-    background-color: #1f1f1f;
-  }
-}
+
 .skin-black .main-header li.user-header {
   background-color: #222;
 }
@@ -160,4 +150,25 @@
 .skin-black .pace .pace-activity {
   border-top-color: #222;
   border-left-color: #222;
+}
+
+
+
+
+
+
+@media (max-width: 767px) {
+  .skin-black .main-header .logo {
+    background-color: #fff;
+    color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    border-right: none;
+  }
+  .skin-black .main-header .logo:hover {
+    background-color: #fff;
+  }
+
+  .skin-black .main-header .navbar{
+    padding-left: 0;
+  }
 }
