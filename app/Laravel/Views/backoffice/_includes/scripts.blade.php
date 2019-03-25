@@ -53,4 +53,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+<script src="/plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%'
+    });
+  });
+</script>
+
 @yield('vendor-js')
