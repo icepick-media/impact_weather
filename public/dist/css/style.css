@@ -460,6 +460,9 @@ a:focus {
   overflow: hidden;
   padding: 0;
   min-height: 150px;
+      background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .user-panel .image{
@@ -2081,7 +2084,7 @@ a:focus {
   /*white-space: nowrap;*/
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 18jpx;
+  line-height: 12px;
 }
 
 .info-box-text b{
@@ -2089,7 +2092,7 @@ a:focus {
   font-weight: 500;
 }
 .info-box-content .info-small{
-  color: #b3b3b3;
+  color: #999999;
   font-size: 10px;
 }
 
@@ -5085,7 +5088,7 @@ table.text-center th {
 }
 
 .active-box .status h5{
-  color: #ccc; 
+  color: #999999; 
 }
 .active-box .status h4,
 .active-box .status h5{
@@ -5165,7 +5168,7 @@ table.text-center th {
 }
 
 .connected .dis-table-cell + .dis-table-cell{
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #e6e6e6;
 }
 
 .breadcrumb li.active a{
@@ -5190,6 +5193,52 @@ table.text-center th {
 .navbar-custom-menu  .navbar-nav  li.flag{
       padding: 15px 15px 15px 0px;
 }
+
+.wrapper-info .box-header .box-icon{
+  position: absolute;
+  top: 58px;
+}
+
+
+.wrapper-info .box-header .box-icon img{
+  width: auto;
+  height: 45px;
+}
+
+
+.wrapper-info .box-body{
+  padding-top: 0;
+}
+
+
+.connected .info-box-icon > img {
+    width: 50px;
+    background-color: #49af35;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 767px) {
   .fixed .content-wrapper,

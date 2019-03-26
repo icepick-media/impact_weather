@@ -44,8 +44,8 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  margin: 15px auto;
-  background-color: #cccccc;
+  margin: 0px auto 15px auto;
+  background-color: #f2f2f2;
 }
 .c100 *, .c100 *:before, .c100 *:after {
   -webkit-box-sizing: content-box;
@@ -855,14 +855,14 @@
 /*.c100.dark:hover > span {
   color: #c6ff00;
 }*/
-.c100.green .bar, .c100.green .fill {
-  border-color: #49af35 !important;
+.c100.citrus .bar, .c100.citrus .fill {
+  border-color: #89c409 !important;
 }
 /*.c100.green:hover > span {
   color: #4db53c;
 }*/
-.c100.green.dark .bar, .c100.green.dark .fill {
-  border-color: #49af35 !important;
+.c100.citrus.dark .bar, .c100.citrus.dark .fill {
+  border-color: #89c409 !important;
 }
 /*.c100.green.dark:hover > span {
   color: #5fd400;
@@ -880,9 +880,11 @@
   color: #e08833;
 }*/
 
-.c100.light-green .bar, .c100.light-green .fill {
-  border-color: #89c409 !important;
+.c100.electric-Lime .bar, .c100.electric-Lime .fill {
+  border-color: #cdde00 !important;
 }
-.c100.light-green .bar, .c100.light-green.dark .fill {
-  border-color: #89c409 !important;
+.c100.electric-Lime .bar, .c100.electric-Lime.dark .fill {
+  border-color: #cdde00 !important;
 }
+
+

@@ -152,8 +152,9 @@
 						<div class="col-xs-12">
 							<div class="box dis-table connected">
 								<div class="dis-table-cell">
-									<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
-
+									<span class="info-box-icon">
+                    <img src="/dist/img/yield.png">
+                  </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Active Stations </b></span>
 										<span class="info-small"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span>
@@ -164,8 +165,9 @@
 								<!-- /.info-box -->
 
 								<div class="dis-table-cell">
-									<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
-
+									<span class="info-box-icon">
+                    <img src="/dist/img/oer.png">
+                  </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Today's Registrant </b></span>
 										<span class="info-small"> ---  </span>
@@ -176,8 +178,9 @@
 								<!-- /.info-box -->
 
 								<div class="dis-table-cell">
-									<span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
-
+									<span class="info-box-icon">
+                    <img src="/dist/img/cost.png">
+                  </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> All App Users </b></span>
 										<span class="info-small"> --- </span>
@@ -195,7 +198,7 @@
 					</div>
 		
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-12 wrapper-info">
 							<!-- jQuery Knob -->
 							<div class="box box-solid">
 								<div class="box-header">
@@ -206,6 +209,10 @@
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
 										</button>
+									</div>
+
+									<div class="box-icon">
+										<img src="/dist/img/cutting.png">
 									</div>
 								</div>
 								<!-- /.box-header -->
@@ -239,6 +246,10 @@
 										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
 										</button>
 									</div>
+
+									<div class="box-icon">
+										<img src="/dist/img/fartilizer.png">
+									</div>
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body">
@@ -270,6 +281,9 @@
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
 										</button>
+									</div>
+									<div class="box-icon">
+										<img src="/dist/img/spray.png">
 									</div>
 								</div>
 								<!-- /.box-header -->
