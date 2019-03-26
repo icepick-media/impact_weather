@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <!-- /.col -->
-                            <div class="col-xs-6">
+                            <div class="col-xs-6 text-right">
                                 <a href="#"> <i class="fa fa-lock"></i> forgot password</a>
                             </div>
                             <!-- /.col -->
