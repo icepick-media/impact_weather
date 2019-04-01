@@ -2090,6 +2090,7 @@ a:focus {
 .info-box-text b{
   color: #666666;
   font-weight: 500;
+  line-height: 20px;
 }
 .info-box-content .info-small{
   color: #999999;

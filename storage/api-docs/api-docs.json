@@ -297,7 +297,7 @@
                     {
                         "name": "Authorization",
                         "in": "header",
-                        "description": "JWT Auth token",
+                        "description": "Bearer <token>",
                         "required": true,
                         "type": "string"
                     },
