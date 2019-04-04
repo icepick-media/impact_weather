@@ -109,8 +109,8 @@ class LoginController extends Controller {
             'http_errors' => false,
             'form_params' => [
                 'grant_type'    => 'password',
-                'client_id'     => $request->get('client_id'),
-                'client_secret' => $request->get('client_secret'),
+                'client_id'     => 7,
+                'client_secret' => 'SYD4aeeAabJ5qyVy0U5A9UImP2cAc1X2ISTUa5Ps',
                 'username'      => $contact,
                 'password'      => $contact,
                 'scope'         => "*",

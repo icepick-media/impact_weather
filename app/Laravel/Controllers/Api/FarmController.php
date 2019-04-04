@@ -32,7 +32,8 @@ class FarmController extends Controller
 
     public function index(Request $request, $format = '') {
 
-        $user = $request->user();
+        $data = $request->all();
+        $user = User::where('id', $data['user_id'])->first();
         $per_page = $request->get('per_page', 10);
         $page = $request->get('page', 1);
         
