@@ -95,12 +95,14 @@ class Farm extends Model
             $farm_map = new FarmMap;
             $farm_map->farm_id = $this->id;
             $location = explode(",", $coordinates, 2);
+
             if(count($location) == 2) {
                 $farm_map->fill([ 
                     'geo_lat' => floatval($location[0]), 
                     'geo_long' => floatval($location[1])
                 ]);
             }
+
             $farm_map->save();
         }
 

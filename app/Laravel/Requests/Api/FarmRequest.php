@@ -17,7 +17,7 @@ class FarmRequest extends ApiRequestManager
 
         $rules = [
             'name' => "required",
-            'map' => "required|array|min:3",
+            'map' => "required|array|min:1",
             'crops' => "required|array|min:1",
             'size'  => "required|numeric",
         ];
