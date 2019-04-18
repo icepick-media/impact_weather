@@ -4,10 +4,10 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    <h1> All Registrant </h1>
+    <h1> Farmer Profile </h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('backoffice.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Registant Contact</li>
+      <li class="active">Farmer Profile</li>
     </ol>
 
     <div class="active-box">

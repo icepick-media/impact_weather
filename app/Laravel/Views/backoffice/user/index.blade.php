@@ -4,10 +4,10 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    <h1> All Users </h1>
+    <h1> Farm Directory </h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('backoffice.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Users</li>
+      <li class="active">Farm Directory</li>
     </ol>
 
     <div class="active-box">
@@ -35,8 +35,8 @@
                       <!-- <th width="25px">ID</th> -->
                       <th>Name</th>
                       <th>Email / Contact Number</th>
-                      <th>No. of Farms</th>
-                      <th>Date Registered</th>
+                      <th>Farm Info</th>
+                      <th>Crop & Hybrid/Variety</th>
                       <th>Last Login</th>
                       <th>Action</th>
                     </tr>
@@ -50,27 +50,53 @@
                       </td>
                       <td>
                         <div><small>{{ $user->email }}</small></div>
-                        <div><small>{{ $user->contact }}</small></div> 
+                        <div><small>{{ $user->contact }}</small></div>
                       </td>
                       @if($user->num_farm > 0)
-                      <td class="text-center"><a href="{{route('backoffice.user.edit',[$user->id])}}"><b>{{ $user->num_farm }}</b></a>
-                      <div>
-                        <small>
-                          @if($user->station_attached)
-                          @foreach($user->station_attached as $index => $station)
-                          <a target="_blank" href="{{ route('backoffice.station.edit', [$station]) }}">
-                            <div>{{$index}}</div><br>
-                          </a>
-                          @endforeach
-                          @endif
-                        </small>
-                      </div>
-                      </td>
+                        <td class="text-center"><a href="{{route('backoffice.user.edit',[$user->id])}}"><b>{{ $user->num_farm }}</b></a>
+                          <div>
+                            <small>
+                              @if($user->station_attached)
+                                @foreach($user->station_attached as $index => $station)
+                                <a target="_blank" href="{{ route('backoffice.station.edit', [$station]) }}">
+                                  <div>{{$station->name}}</div><br>
+                                </a>
+                                <small>
+                                  @if($station->farm_attached)
+                                    @foreach($station->farm_attached as $index => $farm)
+                                    <!-- <a target="_blank" href="{{ route('backoffice.station.edit', [$farm['id']]) }}"> -->
+                                      <div>{{$farm['name']}}</div><br>
+                                    <!-- </a> -->
+                                    @endforeach
+                                  @endif
+                                </small>
+                                @endforeach
+                              @endif
+                            </small>
+                          </div>
+                        </td>
                       @else
-                      <td>{{ $user->num_farm }}</td>
+                        <td>
+                          <div>
+                            <small>
+                              {{ $user->num_farm }}
+                            </small>
+                          </div>
+                        </td>
                       @endif
                       <!-- <td>{{ $user->allow_weather_station }}</td> -->
-                      <td><small>{{ $user->date_format($user->last_activity,"M d, Y") }}</small></td>
+                      <!-- <td><small>{{ $user->date_format($user->last_activity,"M d, Y") }}</small></td> -->
+                      <td>
+                        <div>
+                            <small>
+                              @if($user->farm_attached)
+                                @foreach($user->farm_attached as $index => $farm)
+                                  <div>{{$farm->crop_display}}</div><br>
+                                @endforeach
+                              @endif
+                            </small>
+                          </div>
+                      </td>
 
                       <td><small>{{ $user->created_at->format("M d, Y") }}</small></td>
                       <td>
@@ -95,8 +121,8 @@
                       <!-- <th width="25px">ID</th> -->
                       <th>Name</th>
                       <th>Email / Contact Number</th>
-                      <th>No. of Farms</th>
-                      <th>Date Registered</th>
+                      <th>Farm Info</th>
+                      <th>Crop & Hybrid/Variety</th>
                       <th>Last Login</th>
                       <th width="100px"></th>
                     </tr>

@@ -4,10 +4,10 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    <h1> All Stations </h1>
+    <h1> Farm Location </h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('backoffice.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Stations</li>
+      <li class="active">Farm Location</li>
     </ol>
 
     <div class="active-box">

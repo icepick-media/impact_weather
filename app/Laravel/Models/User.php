@@ -27,7 +27,7 @@ class User extends Authenticatable
         'allow_weather_station'
     ];
 
-    protected $appends = ['default_farm_id','num_farm','station_attached'];
+    protected $appends = ['default_farm_id','num_farm','station_attached','farm_attached'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -55,7 +55,16 @@ class User extends Authenticatable
         $stations = $this->farms()->pluck('station_id')->toArray();
 
         if(count($stations) > 0){
-            return Station::whereIn('id',$stations)->pluck("id",DB::raw("CONCAT(code,' - ',name) AS code"))->toArray();
+            return Station::whereIn('id',$stations)->get();
+        }
+        return FALSE;
+    }
+
+    public function getFarmAttachedAttribute(){
+        $farms = $this->farms()->get();
+
+        if(count($farms) > 0){
+            return $farms;
         }
         return FALSE;
     }

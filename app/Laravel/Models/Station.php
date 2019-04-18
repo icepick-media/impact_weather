@@ -27,7 +27,7 @@ class Station extends Model
     ];
 
     public $appends = [
-        'distance', 'is_nearby','num_farm','last_date'
+        'distance', 'is_nearby','num_farm','last_date','farm_attached'
     ];  
 
     public function metos(){
@@ -40,6 +40,15 @@ class Station extends Model
 
     public function getNumFarmAttribute(){
         return Farm::where('station_id',$this->id)->count();
+    }
+
+    public function getFarmAttachedAttribute(){
+        $farms = $this->farm()->get()->toArray();
+
+        if(count($farms) > 0){
+            return $farms;
+        }
+        return FALSE;
     }
 
     public function getLastDateAttribute(){

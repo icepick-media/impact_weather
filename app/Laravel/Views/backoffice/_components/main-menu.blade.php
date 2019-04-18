@@ -91,21 +91,23 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-user"></i> <span>Users</span>
+            <i class="fa fa-user"></i> <span>Farmers Database</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('backoffice.user.index') }}"><i class="fa fa-plus-square-o"></i> Record Data</a></li>
-            <li><a href="{{ route('backoffice.user.create') }}"><i class="fa fa-pencil-square-o"></i> Create New</a></li>
-            <li><a href="{{ route('backoffice.user.trash') }}"><i class="fa fa-trash-o"></i> Trash</a></li>
+            <li><a href="{{ route('backoffice.user.index') }}"><i class="fa fa-list"></i>Farm Directory</a></li>
+            <li><a href="{{ route('backoffice.crop.index') }}"><i class="fa fa-leaf"></i> Crops & Variety</a></li>
+            <li><a href="{{ route('backoffice.registrant.index') }}"><i class="fa fa-users"></i>Farmers Profile</a></li>
+            <!-- <li><a href="{{ route('backoffice.user.create') }}"><i class="fa fa-pencil-square-o"></i> Create New</a></li>
+            <li><a href="{{ route('backoffice.user.trash') }}"><i class="fa fa-trash-o"></i> Trash</a></li> -->
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-map-marker"></i> <span>Stations</span>
+            <i class="fa fa-map-marker"></i> <span>Farm Location</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -118,9 +120,9 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
-            <i class="fa fa-leaf"></i> <span>Crops</span>
+            <i class="fa fa-leaf"></i> <span>Crops & Variety</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -129,9 +131,9 @@
             <li><a href="{{ route('backoffice.crop.index') }}"><i class="fa fa-plus-square-o"></i> Record Data</a></li>
             <li><a href="{{ route('backoffice.crop.create') }}"><i class="fa fa-pencil-square-o"></i> Create New</a></li>
           </ul>
-        </li>
+        </li> -->
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-address-book"></i> <span>Contact Registrants</span>
             <span class="pull-right-container">
@@ -142,7 +144,7 @@
             <li><a href="{{ route('backoffice.registrant.index') }}"><i class="fa fa-plus-square-o"></i> Record Data</a></li>
             <li><a href="{{ route('backoffice.registrant.create') }}"><i class="fa fa-pencil-square-o"></i> Create New</a></li>
           </ul>
-        </li>
+        </li> -->
 
         <!-- <li class="treeview">
           <a href="#">

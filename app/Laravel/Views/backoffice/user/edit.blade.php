@@ -27,7 +27,7 @@
             @if(Input::get('update_profile','no') == "yes")
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"> Profile Info </h3>
+                  <h3 class="box-title"> {{ $user->name }} </h3>
                 </div>
                 
                 <div class="box-body">
@@ -177,7 +177,7 @@
             @else
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"> Profile Info </h3>
+                  <h3 class="box-title"> {{ $user->name }} </h3>
                 </div>
                 
                 <div class="box-body">
@@ -211,6 +211,21 @@
           <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
+                <h3 class="box-title"> Farm geolocation </h3>
+              </div>
+              
+              <div class="box-body">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12 connectedSortable">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box">
+              <div class="box-header with-border">
                 <h3 class="box-title"> Farms </h3>
               </div>
               
@@ -218,20 +233,29 @@
                 <table class="table table-striped table-bordered bootstrap-3 datatable">
                   <thead>
                     <tr>
-                      <th>Farm/Crop - Variety</th>
-                      <th>Station ID</th>
+                      <th>Farm</th>
+                      <th>Crops & Variety</th>
                       <th>Date Added</th>
                     </tr>
                   </thead>
                   <tbody>
                     @forelse($user->farms as $index => $farm)
                     <tr>
-                      <td><small>{{Str::upper($farm->name .": ".$farm->crop_display)}}
-                      </small>
-                      <div><small>[<a href="{{route('backoffice.user.farm',[$user->id,$farm->id])}}">View All Activity</a>]</small></div>
+                      <td>
+                        <div>
+                          <small>
+                            {{Str::upper($farm->name)}}
+                          </small>
+                        </div>
                       </td>
-                      <td><a href="{{route('backoffice.station.edit',[$farm->station_id])}}">{{$farm->station?$farm->station->code:"n/a"}}</a></td>
-                      
+                      <!-- <td><a href="{{route('backoffice.station.edit',[$farm->station_id])}}">{{$farm->station?$farm->station->code:"n/a"}}</a></td> -->
+                      <td>
+                        <div>
+                          <small>
+                            [{{Str::upper($farm->crop_display)}}]
+                          </small>
+                        </div>
+                      </td>
                       <td>{{$farm->created_at->format("M d, Y")}}</td>
                     </tr>
                     @empty
