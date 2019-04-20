@@ -215,7 +215,7 @@
               </div>
               
               <div class="box-body">
-                <div id="map"></div>
+                <div id="userMap" style="height: 322px;"></div>
               </div>
             </div>
           </div>
@@ -333,7 +333,7 @@
 
 		var infowindow =  new google.maps.InfoWindow({});
 		var marker, count;
-		var map = new google.maps.Map(document.getElementById('map'), {
+		var map = new google.maps.Map(document.getElementById('userMap'), {
 			zoom: 9,
 			center: center
 		});
