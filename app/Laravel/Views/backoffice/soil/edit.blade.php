@@ -4,17 +4,17 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    <h1> Add new Farm Activity </h1>
+    <h1> Edit {{ $soil->name . " (" . $soil->type . ")" }} </h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('backoffice.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="{{ route('backoffice.activity.index') }}"><i class="fa fa-dashboard"></i> Farm Activities</a></li>
-      <li class="active">Create</li>
+      <li><a href="{{ route('backoffice.soil.index') }}"><i class="fa fa-dashboard"></i> Soils</a></li>
+      <li class="active">{{ $soil->name . " (" . $soil->type . ")" }}</li>
     </ol>
 
     <div class="active-box">
       <div class="status">
-        <a href="{{ route('backoffice.activity.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
-        <a href="{{ route('backoffice.activity.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
+        <a href="{{ route('backoffice.soil.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
+        <a href="{{ route('backoffice.soil.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
       </div>
     </div>
   </section>
@@ -26,52 +26,43 @@
           <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title"> Activity Details </h3>
+                <h3 class="box-title"> Soil Details </h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
                 <form class="form form-horizontal" method="post" enctype="multipart/form-data">
 
-                <div class="form-body">
+                  <div class="form-body">
 
-                  {{ csrf_field() }}
+                    {{ csrf_field() }}
 
-                  <div class="form-group {{ $errors->has('farm_id') ? 'has-danger' : NULL }} row">
-                    <label class="col-md-2 label-control" for="farm_id">Farm</label>
-                    <div class="col-md-9">
-                      {!! Form::select('farm_id', $farms, old('farm_id'), ['class' => "form-control"]) !!}
-                      @if($errors->has('farm_id')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('farm_id') }}</small></p> @endif
+                    <div class="form-group {{ $errors->has('name') ? "has-danger" : NULL }} row">
+                      <label class="col-md-2 label-control" for="name">Name (eg Terai)</label>
+                      <div class="col-md-9">
+                        <input type="text" id="name" class="form-control" placeholder="Name" name="name" value="{{ old('name',$soil->name) }}">
+                        @if($errors->has('name')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('name') }}</small></p> @endif
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="form-group {{ $errors->has('crop_id') ? 'has-danger' : NULL }} row">
-                    <label class="col-md-2 label-control" for="crop_id">Crops</label>
-                    <div class="col-md-9">
-                      {!! Form::select('crop_id', $crops, old('crop_id'), ['class' => "form-control"]) !!}
-                      @if($errors->has('crop_id')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('crop_id') }}</small></p> @endif
+                    <div class="form-group {{ $errors->has('type') ? "has-danger" : NULL }} row">
+                      <label class="col-md-2 label-control" for="type">Soil Type (eg. Red)</label>
+                      <div class="col-md-9">
+                        <input type="text" id="type" class="form-control" placeholder="Soil Type" name="type" value="{{ old('type',$soil->type) }}">
+                        @if($errors->has('type')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('type') }}</small></p> @endif
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="form-group {{ $errors->has('activity') ? "has-danger" : NULL }} row">
-                    <label class="col-md-2 label-control" for="activity">Activity</label>
-                    <div class="col-md-9">
-                      <input type="text" id="activity" class="form-control" placeholder="Farm Activity" name="activity" value="{{ old('activity') }}">
-                      @if($errors->has('activity')) <p class="text-xs-left"><small class="danger text-muted">{{ $errors->first('activity') }}</small></p> @endif
-                    </div>
                   </div>
-
-                </div>
 
                   <div class="form-actions">
                     <button type="submit" class="btn btn-info btn-radius mr-1">
                       <i class="icon-check2"></i> Save
                     </button>
-                    <a href="{{ route('backoffice.activity.index') }}" class="btn btn-danger btn-trash">
+                    <a href="{{ route('backoffice.soil.index') }}" class="btn btn-danger btn-trash">
                       <i class="icon-cross2"></i> Cancel
                     </a>
                   </div>
                 </form>
-                
               </div>
             </div>
           </div>
@@ -89,7 +80,6 @@
 @stop
 
 @section('vendor-js')
-
 @stop
 
 @section('page-scripts')
@@ -123,6 +113,6 @@
       input.val($(this).slugify($(this).val()));
     });
   });
-  
+
 </script>
 @stop

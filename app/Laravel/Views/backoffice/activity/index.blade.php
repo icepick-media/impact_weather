@@ -1,105 +1,80 @@
 @extends('backoffice._layouts.app')
 @section('content')
-<div class="robust-content content container-fluid">
-  <div class="content-wrapper">
-    <div class="content-header row">
-      <div class="breadcrumb-wrapper col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('backoffice.index') }}">Home</a></li>
-          <li class="breadcrumb-item active">Farm Activities</li>
-        </ol>
-      </div>
-      <div class="content-header-left col-md-6 col-xs-12">
-        <h3 class="content-header-title mb-0">All Activities</h3>
-        <p class="text-muted mb-0">Record data of all farm activities in your mobile application.</p>
-      </div>
-      <div class="content-header-right col-md-6 col-xs-12">
-        <div role="group" aria-label="Button group with nested dropdown" class="btn-group float-md-right mt-1">
-          <a href="{{ route('backoffice.activity.create') }}" class="btn btn-info"><i class="icon-plus"></i> Add New</a>
-          <a href="{{ route('backoffice.activity.trash') }}" class="btn btn-info"><i class="icon-trash2"></i> Trash</a>
-        </div>
-      </div>
-      <div class="content-header-lead col-xs-12 mt-1">
-        <p class="lead">
-          {{-- Page Lead Paragraph --}}
-        </p>
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1> Farm Activities </h1>
+    <ol class="breadcrumb">
+      <li><a href="{{ route('backoffice.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Farm Activities</li>
+    </ol>
+
+    <div class="active-box">
+      <div class="status">
+        <a href="{{ route('backoffice.activity.create') }}" class="btn btn-info btn-radius"><i class="icon-plus"></i> Add New</a>
+        <a href="{{ route('backoffice.activity.trash') }}" class="btn btn-danger btn-trash"><i class="icon-trash2"></i> Trash</a>
       </div>
     </div>
-    <div class="content-body">
-      
-
-      <!-- Bootstrap 3 table -->
-      <section id="bootstrap3">
+  </section>
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-12 connectedSortable">
         <div class="row">
-          <div class="col-xs-12">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">Record Data</h4>
-                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                <div class="heading-elements">
-                  <ul class="list-inline mb-0">
-                    <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
-                    <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                    {{-- <li><a data-action="close"><i class="icon-cross2"></i></a></li> --}}
-                  </ul>
-                </div>
+          <div class="col-md-12">
+            <div class="box">
+              <div class="box-header with-border">
+                <h3 class="box-title"> Record Data </h3>
               </div>
-              <div class="card-body collapse in">
-                <div class="card-block card-dashboard">
-                  <p class="card-text">
-                    {{-- DataTables can integrate seamlessly with Bootstrap 3 using Bootstrap's table styling options to present an interface with a uniform design, based on Bootstrap, for your site / app. --}}
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-striped table-bordered bootstrap-3 datatable">
-                      <thead>
-                        <tr>
-                          <th width="25px">ID</th>
-                          <th>Name</th>
-                          <th>Code</th>
-                          <th>Last Modified</th>
-                          <th width="100px"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach($activities as $index => $activity)
-                        <tr>
-                          <td>{{ ++$index }}</td>
-                          <td>{{ $activity->name }}</td>
-                          <td>{{ $activity->code }}</td>
-                          <td>{{ $activity->updated_at->format("F d, Y") }}</td>
-                          <td>
-                            <!-- Single Button Dropdown -->
-                            <div class="btn-group dropup">
-                                <button type="button" class="btn btn-secondary btn-min-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('backoffice.activity.edit', [$activity->id]) }}">Edit</a>
-                                    <a class="dropdown-item btn-delete" data-url="{{ route('backoffice.activity.destroy', [$activity->id]) }}" href="#">Delete</a>
-                                </div>
-                            </div>
-                            <!-- /btn-group -->
-                          </td>
-                          @endforeach
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th width="25px">ID</th>
-                          <th>Name</th>
-                          <th>Type</th>
-                          <th>Last Modified</th>
-                          <th width="100px"></th>
-                        </tr>
-                      </tfoot>
-                    </table>  
-                  </div>      
-                </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive">
+                <table class="table table-striped table-bordered bootstrap-3 datatable">
+                  <thead>
+                    <tr>
+                      <th>Farm Name</th>
+                      <th>Crop</th>
+                      <th>Variety</th>
+                      <th>Activity</th>
+                      <th>Last Modified</th>
+                      <th width="100px"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($activities as $index => $activity)
+                      <tr>
+                        <td>{{ $activity->farm_attached->name }}</td>
+                        <td>{{ $activity->crop_attached->name }}</td>
+                        <td>{{ $activity->crop_attached->variety }}</td>
+                        <td>{{ $activity->activity }}</td>
+                        <td>{{ $activity->updated_at->format("F d, Y") }}</td>
+                        <td>
+                          <!-- Single Button Dropdown -->
+                          <div class="btn-group dropup">
+                              <button type="button" class="btn btn-primary btn-min-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item btn btn-warning" href="{{ route('backoffice.activity.edit', [$activity->id]) }}">Edit</a>
+                                  <a class="dropdown-item btn-delete btn btn-danger" data-url="{{ route('backoffice.activity.destroy', [$activity->id]) }}" href="{{ route('backoffice.activity.destroy', [$activity->id]) }}">Delete</a>
+                              </div>
+                          </div>
+                          <!-- /btn-group -->
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Farm Name</th>
+                      <th>Crop</th>
+                      <th>Variety</th>
+                      <th>Activity</th>
+                      <th>Last Modified</th>
+                      <th width="100px"></th>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!--/ Bootstrap 3 table -->
+      </div>
     </div>
   </div>
 </div>

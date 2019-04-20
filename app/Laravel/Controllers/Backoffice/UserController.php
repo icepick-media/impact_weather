@@ -130,6 +130,7 @@ class UserController extends Controller
 
         if($user) {
             $this->data['user'] = $user;
+            $this->data['stations'] = $user->station_attached;
             $farms = $user->farms()->pluck('id')->toArray();
 
             if(!$farms){ $farms = ["0"];}

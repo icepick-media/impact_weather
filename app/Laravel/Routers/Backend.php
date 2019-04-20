@@ -235,6 +235,17 @@ Route::group(
 				$this->any('delete/{id?}', ['as' => "destroy", 'uses' => "CropController@destroy"]);
 			});
 
+			$this->group(['as' => "soil.", 'prefix' => "soils"], function() {
+				$this->get('/', ['as' => "index", 'uses' => "SoilController@index"]);
+				$this->get('create', ['as' => "create", 'uses' => "SoilController@create"]);
+				$this->post('create', ['as' => "store", 'uses' => "SoilController@store"]);
+				$this->get('edit/{id?}', ['as' => "edit", 'uses' => "SoilController@edit"]);
+				$this->post('edit/{id?}', ['as' => "update", 'uses' => "SoilController@update"]);
+				$this->get('trash', ['as' => "trash", 'uses' => "SoilController@trash"]);
+				$this->any('restore/{id?}', ['as' => "recover", 'uses' => "SoilController@recover"]);
+				$this->any('delete/{id?}', ['as' => "destroy", 'uses' => "SoilController@destroy"]);
+			});
+
 			$this->group(['as' => "registrant.", 'prefix' => "registrants"], function() {
 				$this->get('/', ['as' => "index", 'uses' => "RegistrantContactController@index"]);
 				$this->get('create', ['as' => "create", 'uses' => "RegistrantContactController@create"]);

@@ -4,7 +4,9 @@ namespace App\Laravel\Controllers\Backoffice;
 
 use App\Laravel\Models\FarmActivity;
 use App\Laravel\Requests\Backoffice\FarmActivityRequest;
-use Helper;
+use App\Laravel\Models\Farm;
+use App\Laravel\Models\Crop;
+use DB;
 
 class FarmActivityController extends Controller
 {
@@ -13,6 +15,8 @@ class FarmActivityController extends Controller
 
     public function __construct() {
         $this->data['statuses'] = ['yes' => "Enable Activity",'no' => "Deactivate/Hide Activity"];
+        $this->data['farms'] = ['' => "Select Farm"]+Farm::all()->pluck("name","id")->toArray();
+        $this->data['crops'] = ['' => "Select Crop"]+Crop::select(DB::raw("CONCAT(name,' (',variety,')') AS name"),'id')->get()->pluck("name","id")->toArray();
     }
 
     public function index() {
@@ -80,7 +84,7 @@ class FarmActivityController extends Controller
     }
 
     public function trash() {
-        $this->data['activitiss'] = FarmActivity::onlyTrashed()->orderBy('deleted_at', "DESC")->get();
+        $this->data['activities'] = FarmActivity::onlyTrashed()->orderBy('deleted_at', "DESC")->get();
         return view('backoffice.activity.trash', $this->data);
     }
 

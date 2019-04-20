@@ -120,6 +120,34 @@
           </ul>
         </li>
 
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pagelines"></i> <span>Soil Collection</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('backoffice.soil.index') }}"><i class="fa fa-list"></i>Soils</a></li>
+            <li><a href="{{ route('backoffice.soil.create') }}"><i class="fa fa-pencil-square-o"></i> Create New</a></li>
+            <li><a href="{{ route('backoffice.soil.trash') }}"><i class="fa fa-trash-o"></i> Trash</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-leaf"></i> <span>Farm Activity</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('backoffice.activity.index') }}"><i class="fa fa-list"></i>Farm Activity</a></li>
+            <li><a href="{{ route('backoffice.activity.create') }}"><i class="fa fa-pencil-square-o"></i> Create New</a></li>
+            <li><a href="{{ route('backoffice.activity.trash') }}"><i class="fa fa-trash-o"></i> Trash</a></li>
+          </ul>
+        </li>
+
         <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-leaf"></i> <span>Crops & Variety</span>

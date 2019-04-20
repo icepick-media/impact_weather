@@ -215,6 +215,7 @@
               </div>
               
               <div class="box-body">
+                <div id="map"></div>
               </div>
             </div>
           </div>
@@ -321,6 +322,40 @@
 @stop
 
 @section('vendor-js')
+<script>
+	// Initialize and add the map
+	function initMap() {
+		var locations = [
+			$stations = {!! str_replace("'", "\'", json_encode($stations)) !!}
+    ];
+				
+		var center = {lat: 16.726095, lng: 120.835003};
+
+		var infowindow =  new google.maps.InfoWindow({});
+		var marker, count;
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 9,
+			center: center
+		});
+		for (count = 0; count < locations[0].length; count++) {
+			marker = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[0][count].geo_lat, locations[0][count].geo_long),
+					map: map,
+					title: locations[0][count].name
+			});	
+
+			google.maps.event.addListener(marker, 'click', (function (marker, count) {
+				return function () {
+					infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/>'+locations[0][count].name);
+					infowindow.open(map, marker);
+				}
+			})(marker, count));
+		}
+	}
+</script>
+<!-- <script src="http://maps.google.com/maps/api/js?key={{  env('GOOGLE_MAP_KEY') }}&callback=initMap" type="text/javascript"></script> -->
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCousCXpGocpQN0LuBCSzLCHUsMm2jDbP4&callback=initMap">   </script>
+
 @stop
 
 @section('page-scripts')
