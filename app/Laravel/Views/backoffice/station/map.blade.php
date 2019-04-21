@@ -25,7 +25,7 @@
           <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title"> Record Data </h3>
+                <h3 class="box-title"> Farms </h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -51,39 +51,96 @@
 @stop
 
 @section('page-scripts')
-<script src="http://maps.google.com/maps/api/js?key={{  env("GOOGLE_MAP_KEY") }}" type="text/javascript"></script>
-<script type="text/javascript">
-  $(function(){
-      var locations = [
-            @foreach($stations as $index => $station )
-            ["{{"{$station->code} - {$station->name}"}} ",  {{$station->geo_lat}}, {{$station->geo_long}}, {{$station->id}}],
-            @endforeach
-          ];
+<script>
+	// Initialize and add the map
+	function initMap() {
+		var locations = [
+			$stations = {!! str_replace("'", "\'", json_encode($stations)) !!}
+    ];
+				
+		var center = {lat: 16.726095, lng: 120.835003};
 
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 9,
-            center: new google.maps.LatLng({{$stations[0]->geo_lat}}, {{$stations[0]->geo_long}}),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          });
+		var infowindow =  new google.maps.InfoWindow({});
+		var marker, count;
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 13,
+			center: center
+		});
+		for (count = 0; count < locations[0].length; count++) {
+			if(locations[0][count].farm_attached){
+				var userFarms = locations[0][count].farm_attached;
+				for(countMap=0; countMap < userFarms.length; countMap++){
+					marker = new google.maps.Marker({
+							position: new google.maps.LatLng(userFarms[countMap].farm_display.geo_lat, userFarms[countMap].farm_display.geo_long),
+							map: map,
+							title: locations[0][count].name
+					});	
 
-          var infowindow = new google.maps.InfoWindow();
+					google.maps.event.addListener(marker, 'click', (function (marker, count) {
+						return function () {
+							if(locations[0][count].farm_attached[countMap]){
+								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name+'<br/><strong>Farm:</strong> '+locations[0][count].farm_attached[countMap].name);
+							} else {
+								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name);
+							}
+							infowindow.open(map, marker);
+						}
+					})(marker, count));
+				}
+			}
+		}
 
-          var marker, i;
+		// Define the LatLng coordinates for the polygon's path.
+		var triangleCoords = [
+			{lat: 16.736945001761452, lng: 120.84009651491931},
+			{lat: 16.741547846177642, lng: 120.84764961550525},
+			{lat: 16.734972320112583, lng: 120.85503105471423},
+			{lat: 16.72938294454453, lng: 120.8481645996361},
+			{lat: 16.7326708323778, lng: 120.8394098694115},
+		];
 
-          for (i = 0; i < locations.length; i++) { 
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-              map: map,
-              icon : "http://static.metos.at/img/station-user.png"
-            });
+		// Construct the polygon.
+		var bermudaTriangle = new google.maps.Polygon({
+			paths: triangleCoords,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 1,
+			fillColor: '#FF0000',
+			fillOpacity: 0.35
+		});
+		bermudaTriangle.setMap(map);
 
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-              return function() {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-              }
-            })(marker, i));
-          }
-  });
+		// var drawingManager = new google.maps.drawing.DrawingManager({
+    //       drawingMode: google.maps.drawing.OverlayType.MARKER,
+    //       drawingControl: true,
+    //       drawingControlOptions: {
+    //         position: google.maps.ControlPosition.TOP_CENTER,
+    //         drawingModes: ['polygon']
+    //       },
+		// 			polygonOptions: {
+		// 				fillColor: '#FF0000',
+    //         strokeWeight: 1,
+    //         clickable: false,
+    //         zIndex: 1
+		// 			},
+    //       markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
+    //     });
+		// 	drawingManager.setMap(map);
+		// 	google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+		// 		var paths = polygon.getPath();
+		// 		var coordinates = [];
+		// 		// Iterate over the vertices.
+    //     for (var i =0; i < paths.getLength(); i++) {
+    //       var xy = paths.getAt(i);
+		// 			var positionMap = {lat: xy.lat(), lng: xy.lng()};
+		// 			coordinates.push(positionMap);
+    //     }
+		// 		console.log(coordinates);
+		// 	});
+
+
+	}
 </script>
+<!-- <script src="http://maps.google.com/maps/api/js?key={{  env('GOOGLE_MAP_KEY') }}&callback=initMap" type="text/javascript"></script> -->
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCousCXpGocpQN0LuBCSzLCHUsMm2jDbP4&libraries=drawing&callback=initMap">   </script>
 @stop

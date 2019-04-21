@@ -25,7 +25,7 @@ class Farm extends Model
         'name', 'station_id', 'remarks','size'
     ];
 
-    protected $appends = ['crop_display'];
+    protected $appends = ['crop_display', 'farm_display'];
 
     /**
      * Get the user associated with this farm.
@@ -42,6 +42,15 @@ class Farm extends Model
         }
 
         return "n/a";
+    }
+
+    public function getFarmDisplayAttribute(){
+        $farm = FarmMap::where('farm_id',$this->id)->first();
+
+        if($farm){
+            return $farm;
+        }
+        return false;
     }
 
     /**

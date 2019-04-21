@@ -7,6 +7,7 @@ use App\Laravel\Models\Journal;
 use App\Laravel\Models\User;
 
 use App\Laravel\Models\Station;
+use App\Laravel\Models\Farm;
 use Carbon, Helper;
 
 class DashboardController extends Controller
@@ -17,7 +18,8 @@ class DashboardController extends Controller
     public function index() {
     	$this->data['date_today'] = Carbon::now()->format("Y-m-d");
     	$this->data['customers'] = User::where('type','user')->orderBy('last_activity',"DESC")->get();
-    	$this->data['stations'] = Station::get();
+        $this->data['stations'] = Station::get();
+        $this->data['farms'] = Farm::get();
         $this->data['journal']  = Journal::whereRaw("DATE(created_at) = '{$this->data['date_today']}'")->orderBy('created_at')->get();
         // echo "<pre>";
         // print_r(!$this->data['customers']->isEmpty() ? $this->data['customers']->count() : 'Empty');
