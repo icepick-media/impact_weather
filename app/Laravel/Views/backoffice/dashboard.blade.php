@@ -29,6 +29,75 @@
 						</div>
 						
 					</div>
+
+					<div class="row">
+          <div class="col-md-12">
+              <div class="box paddyGrowth">
+                <ul class="paddylist">
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/01.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/02.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/03.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/04.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/05.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/06.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/07.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/08.jpg" alt="">
+                  </li>
+                  <li>
+                    <p>Transplantation 
+                      stage
+                    </p>
+                    <img src="dist/img/09.jpg" alt="">
+                  </li>
+                </ul>
+
+                <ul id="progress">
+                  <li> Vegetative phase </li>
+                  <li> Reproductive phase</li>
+                  <li> Ripening Phase </li>
+                </ul>
+              </div>
+          </div>
+        </div>
 		
 					<div class="row">
 						<div class="col-md-12">
@@ -153,7 +222,7 @@
 							<div class="box dis-table connected">
 								<div class="dis-table-cell">
 									<span class="info-box-icon">
-                    <img src="/dist/img/yield.png">
+                    <img src="/dist/img/cs1.png">
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Active Stations </b></span>
@@ -166,7 +235,7 @@
 
 								<div class="dis-table-cell">
 									<span class="info-box-icon">
-                    <img src="/dist/img/oer.png">
+                    <img src="/dist/img/bs2.png">
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Today's Registrant </b></span>
@@ -179,7 +248,7 @@
 
 								<div class="dis-table-cell">
 									<span class="info-box-icon">
-                    <img src="/dist/img/cost.png">
+                    <img src="/dist/img/ns3.png">
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> All App Users </b></span>
@@ -192,34 +261,33 @@
 
 						</div>
 						<!-- /.col -->
-					
-						
+
 						<!-- /.col -->
 					</div>
-		
+
 					<div class="row">
 						<div class="col-xs-12 wrapper-info">
 							<!-- jQuery Knob -->
 							<div class="box box-solid">
 								<div class="box-header">
-									
+
 									<h3 class="box-title">Harvest Window </h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
-		
+
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
 										</button>
 									</div>
 
 									<div class="box-icon">
-										<img src="/dist/img/cutting.png">
+										<img src="/dist/img/list.png">
 									</div>
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body">
 									<div class="row">
 										<div class="col-xs-12 text-center">
-												<div class="c100 p62 big light-green">
+												<div class="c100 p62 big citrus">
 													<span>62%</span>
 													<div class="slice">
 															<div class="bar"></div>
@@ -227,10 +295,10 @@
 													</div>
 												</div>
 										</div>
-										
+
 									</div>
 									<!-- /.row -->
-		
+
 								</div>
 								<!-- /.box-body -->
 							</div>
@@ -238,10 +306,10 @@
 								<!-- jQuery Knob -->
 							<div class="box box-solid">
 								<div class="box-header">
-									
+
 									<h3 class="box-title">Harvest Window </h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
-		
+
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
 										</button>
@@ -255,7 +323,7 @@
 								<div class="box-body">
 									<div class="row">
 										<div class="col-xs-12 text-center">
-											<div class="c100 p75 big green">
+											<div class="c100 p75 big citrus">
 													<span>75%</span>
 													<div class="slice">
 															<div class="bar"></div>
@@ -263,10 +331,10 @@
 													</div>
 												</div>
 										</div>
-										
+
 									</div>
 									<!-- /.row -->
-		
+
 								</div>
 								<!-- /.box-body -->
 							</div>
@@ -274,10 +342,10 @@
 							<!-- jQuery Knob -->
 							<div class="box box-solid">
 								<div class="box-header">
-									
+
 									<h3 class="box-title">Harvest Window </h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
-		
+
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-default btn-sm"><i class="fa fa-ellipsis-h"></i>
 										</button>
@@ -298,21 +366,21 @@
 													</div>
 												</div>
 										</div>
-										
+
 									</div>
 									<!-- /.row -->
-		
+
 								</div>
 								<!-- /.box-body -->
 							</div>
 							<!-- /.box -->
 						</div>
 						<!-- /.col -->
-					</div>  
+					</div>
 				</section>
 			</div>
 		</div>
-		
+
 </div>
 @stop
 
