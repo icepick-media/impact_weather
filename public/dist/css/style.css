@@ -5411,3 +5411,56 @@ table.text-center th {
 #progress li.active:after {
   border-left-color: #49af35;
 }
+
+.riskData .box-border{
+  display: table;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.riskData .listOfRisk{
+  display: table-cell;
+  padding: 15px 20px;
+}
+.riskData .listOfRisk + .listOfRisk{
+  border-left: 1px solid #000;
+} 
+.riskData .listOfRisk ul{
+  padding: 0;
+  margin: 0;
+}
+.riskData .listOfRisk h4{
+  margin-top: 0;
+}
+.riskData .listOfRisk ul li{
+  list-style-type: none;
+  font-size: 14px;
+  margin: 4px 0;
+  position: relative;
+}
+
+.riskData .listOfRisk ul li span{
+    width: 15px;
+    height: 15px;
+    background-color: #ddd;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.red-alert{
+    background-color: #f6431b !important;
+}
+
+
+.yellow-alert{
+    background-color: #f39c12 !important;
+}
+
+.green-alert{
+    background-color: #49af35 !important
+}

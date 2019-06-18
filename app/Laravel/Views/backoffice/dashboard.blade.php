@@ -25,6 +25,9 @@
 				<section class="col-lg-8">
 					<div class="box">
 						<div class="box-header">
+						<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
 							<div id="map"></div>
 						</div>
 						
@@ -381,6 +384,43 @@
 			</div>
 		</div>
 
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+				<div class="modal-body riskData">
+					<div class="box-border">
+						<div class="listOfRisk">
+							<h4> Disease Risk </h4>
+							<ul>
+								<li> Rice Blast <span class="red-alert"></span> </li>
+								<li> Sheath Blight <span class="green-alert"></span> </li>
+								<li> Bacterial Blight <span class="green-alert"></span> </li>
+								<li> Brown Spot <span class="yellow-alert"></span> </li>
+								<li> Red Stripe <span class="green-alert"></span> </li>
+								<li> Bacterial Leaf Streak <span class="yellow-alert"></span> </li>
+							</ul>	
+						</div>
+						<div class="listOfRisk">
+						<h4> Pest Risk </h4>
+							<ul>
+								<li> BPH <span class="yellow-alert"></span> </li>
+								<li> Rodents <span class="green-alert"></span> </li>
+								<li> Apple Snail <span class="green-alert"></span> </li>
+								<li> Grasshoppers <span class="red-alert"></span> </li>
+								<li> Stem Borers <span class="green-alert"></span> </li>
+								<li> Slender Rice Bugs <span class="yellow-alert"></span> </li>
+							</ul>
+						</div>	
+					</div>	
+				</div>
+				</div>
+
+			</div>
+		</div>
+
+
 </div>
 @stop
 
@@ -417,8 +457,10 @@
 					google.maps.event.addListener(marker, 'click', (function (marker, count) {
 						return function () {
 							if(locations[0][count].farm_attached[countMap]){
+								$('#myModal').on('shown.bs.modal');
 								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name+'<br/><strong>Farm:</strong> '+locations[0][count].farm_attached[countMap].name);
 							} else {
+								$('#myModal').on('shown.bs.modal');
 								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name);
 							}
 							infowindow.open(map, marker);
