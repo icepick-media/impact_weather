@@ -316,7 +316,7 @@
 									</div>
 
 									<div class="box-icon">
-										<img src="/dist/img/fartilizer.png">
+										<img src="/dist/img/search.png">
 									</div>
 								</div>
 								<!-- /.box-header -->
@@ -340,7 +340,7 @@
 							</div>
 							<!-- /.box -->
 							<!-- jQuery Knob -->
-							<div class="box box-solid">
+							<!-- <div class="box box-solid">
 								<div class="box-header">
 
 									<h3 class="box-title">Harvest Window </h3>
@@ -354,11 +354,11 @@
 										<img src="/dist/img/spray.png">
 									</div>
 								</div>
-								<!-- /.box-header -->
+							
 								<div class="box-body">
 									<div class="row">
 										<div class="col-xs-12 text-center">
-											<div class="c100 p50 big yellow">
+											<div class="c100 p50 big citrus">
 													<span>50%</span>
 													<div class="slice">
 															<div class="bar"></div>
@@ -368,12 +368,12 @@
 										</div>
 
 									</div>
-									<!-- /.row -->
+							
 
 								</div>
-								<!-- /.box-body -->
-							</div>
-							<!-- /.box -->
+						
+							</div> -->
+					
 						</div>
 						<!-- /.col -->
 					</div>

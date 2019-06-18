@@ -5324,7 +5324,7 @@ table.text-center th {
 
 
 .paddyGrowth {
-  padding: 60px 0 15px 0;
+  padding: 80px 0 15px 0;
 }
 
 .paddyGrowth ul.paddylist {
@@ -5334,8 +5334,7 @@ table.text-center th {
 
 .paddyGrowth ul.paddylist li{
   display: inline-block;
-  width: 74px;
-  text-align: center;
+  width: 10%;
   text-align: center;
 }
 
@@ -5375,7 +5374,7 @@ table.text-center th {
   border-bottom: 1px solid #49af35;
   width: 30%;
   margin: 0 3px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #progress li:first-child:before{
