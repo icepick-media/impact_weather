@@ -455,6 +455,7 @@
 					});	
 
 					google.maps.event.addListener(marker, 'click', (function (marker, count) {
+						$('#myModal').on('shown.bs.modal');
 						return function () {
 							if(locations[0][count].farm_attached[countMap]){
 								$('#myModal').on('shown.bs.modal');
