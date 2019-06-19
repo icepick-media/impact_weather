@@ -455,13 +455,12 @@
 					});	
 
 					google.maps.event.addListener(marker, 'click', (function (marker, count) {
-						$('#myModal').on('shown.bs.modal');
 						return function () {
 							if(locations[0][count].farm_attached[countMap]){
-								$('#myModal').on('shown.bs.modal');
+								$('#myModal').modal('show');
 								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name+'<br/><strong>Farm:</strong> '+locations[0][count].farm_attached[countMap].name);
 							} else {
-								$('#myModal').on('shown.bs.modal');
+								$('#myModal').modal('show');
 								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name);
 							}
 							infowindow.open(map, marker);
