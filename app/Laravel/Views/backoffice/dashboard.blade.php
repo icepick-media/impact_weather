@@ -274,7 +274,7 @@
 							<div class="box box-solid">
 								<div class="box-header">
 
-									<h3 class="box-title">Harvest Window </h3>
+									<h3 class="box-title">Intervention Advisory Compiled</h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
 
 									<div class="box-tools pull-right">
@@ -319,7 +319,7 @@
 									</div>
 
 									<div class="box-icon">
-										<img src="/dist/img/search.png">
+										<img src="/dist/img/fartilizer.png">
 									</div>
 								</div>
 								<!-- /.box-header -->
@@ -343,10 +343,10 @@
 							</div>
 							<!-- /.box -->
 							<!-- jQuery Knob -->
-							<!-- <div class="box box-solid">
+							<div class="box box-solid">
 								<div class="box-header">
 
-									<h3 class="box-title">Harvest Window </h3>
+									<h3 class="box-title">Farmar Queries Answered </h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
 
 									<div class="box-tools pull-right">
@@ -354,7 +354,7 @@
 										</button>
 									</div>
 									<div class="box-icon">
-										<img src="/dist/img/spray.png">
+										<img src="/dist/img/search.png">
 									</div>
 								</div>
 							
@@ -375,7 +375,7 @@
 
 								</div>
 						
-							</div> -->
+							</div>
 					
 						</div>
 						<!-- /.col -->
