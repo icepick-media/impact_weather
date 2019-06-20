@@ -228,7 +228,7 @@
                     <img src="/dist/img/cs1.png">
                   </span>
 									<div class="info-box-content">
-										<span class="info-box-text">  <b> Active Stations </b></span>
+										<span class="info-box-text">  <b> Critical Stations </b></span>
 										<span class="info-small"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span>
 										<span class="info-box-number">{{$stations->count()}}</span>
 									</div>
@@ -241,7 +241,7 @@
                     <img src="/dist/img/bs2.png">
                   </span>
 									<div class="info-box-content">
-										<span class="info-box-text">  <b> Today's Registrant </b></span>
+										<span class="info-box-text">  <b> Borderline Stations </b></span>
 										<span class="info-small"> ---  </span>
 										<span class="info-box-number">{{$customers->where('created_at','>=',$date_today)->count()}}</span>
 									</div>
@@ -254,7 +254,7 @@
                     <img src="/dist/img/ns3.png">
                   </span>
 									<div class="info-box-content">
-										<span class="info-box-text">  <b> All App Users </b></span>
+										<span class="info-box-text">  <b> No Risk Stations </b></span>
 										<span class="info-small"> --- </span>
 										<span class="info-box-number"> {{$customers->count()}} </span>
 									</div>
@@ -346,7 +346,7 @@
 							<div class="box box-solid">
 								<div class="box-header">
 
-									<h3 class="box-title">Farmar Queries Answered </h3>
+									<h3 class="box-title">Farmer Queries Answered </h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
 
 									<div class="box-tools pull-right">

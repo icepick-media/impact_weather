@@ -1731,7 +1731,7 @@ a:focus {
 .box-header {
   color: #444;
   display: block;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   position: relative;
 }
 .box-header.with-border {
@@ -1747,7 +1747,7 @@ a:focus {
   display: inline-block;
   font-size: 18px;
   margin: 0;
-  line-height: 1;
+  line-height: 1.4;
   color: #666666;
 }
 
@@ -5194,11 +5194,11 @@ table.text-center th {
 .navbar-custom-menu  .navbar-nav  li.flag{
       padding: 15px 15px 15px 0px;
 }
-
+/* 
 .wrapper-info .box-header .box-icon{
   position: absolute;
   top: 58px;
-}
+} */
 
 
 .wrapper-info .box-header .box-icon img{
@@ -5209,6 +5209,7 @@ table.text-center th {
 
 .wrapper-info .box-body{
   padding-top: 0;
+  margin-top: -30px;
 }
 
 
@@ -5275,6 +5276,32 @@ table.text-center th {
 
   .main-header .navbar{
     min-height: 50px;
+  }
+
+  .info-box-content{
+    padding: 0 0px 10px 0px;
+  }
+
+  .paddyGrowth{
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .paddyGrowth ul.paddylist li{
+    display: table-cell !important;
+    width: auto !important;
+  }
+
+  .paddyGrowth ul.paddylist li img{
+    margin-top: 35px !important;
+  }
+ 
+  .paddyGrowth #progress {
+    width: 1050px;
+  }
+
+  .box-header{
+    padding: 10px 44px 10px 10px;
   }
 }
 
@@ -5358,7 +5385,6 @@ table.text-center th {
   padding: 0 10px 0 0px;
   list-style-type: none;
   font-size: 12px;
-  clear: both;
   line-height: 1em;
  
   text-align: center;
@@ -5463,4 +5489,12 @@ table.text-center th {
 
 .green-alert{
     background-color: #49af35 !important
+}
+
+.wrapper-info .box-header {
+  padding-right: 15px;
+}
+
+.wrapper-info .box-header h3{
+  line-height: 1.4;
 }
