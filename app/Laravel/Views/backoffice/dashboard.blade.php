@@ -24,7 +24,7 @@
 			<div class="row">
 				<section class="col-lg-8">
 					<div class="box">
-						<div class="box-header">
+						<div class="box-body">
 						<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button> -->
@@ -44,50 +44,49 @@
                     <img src="dist/img/01.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p>
+						Tillering stage
                     </p>
                     <img src="dist/img/02.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p> 
+						Stem elongation
                     </p>
                     <img src="dist/img/03.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p>
+						Panicle initiation
                     </p>
                     <img src="dist/img/04.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p> Booting/heading stage
                     </p>
                     <img src="dist/img/05.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p>
+						Flowering stage
                     </p>
                     <img src="dist/img/06.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p> 
+						Milk stage
                     </p>
                     <img src="dist/img/07.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p>
+						Dough stage
                     </p>
                     <img src="dist/img/08.jpg" alt="">
                   </li>
                   <li>
-                    <p>Transplantation 
-                      stage
+                    <p>
+						Mature stage
                     </p>
                     <img src="dist/img/09.jpg" alt="">
                   </li>
@@ -104,7 +103,7 @@
 		
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box">
+							<div class="box box-solid">
 								<div class="box-header with-border">
 									<h3 class="box-title"> Today's Activity Report ({{Carbon::now()->format("M d Y")}}) </h3>
 									<div class="box-tools pull-right">
@@ -164,7 +163,7 @@
 		
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box">
+							<div class="box box-solid">
 								<div class="box-header with-border">
 									<h3 class="box-title"> Registered Users </h3>
 									<div class="box-tools pull-right">
@@ -229,7 +228,7 @@
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Critical Stations </b></span>
-										<span class="info-small"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span>
+										<!-- <span class="info-small"> <a href="{{route('backoffice.station.index')}}">[Manage stations]</a></span> -->
 										<span class="info-box-number">{{$stations->count()}}</span>
 									</div>
 									<!-- /.info-box-content -->
@@ -242,7 +241,7 @@
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Borderline Stations </b></span>
-										<span class="info-small"> ---  </span>
+										<!-- <span class="info-small"> ---  </span> -->
 										<span class="info-box-number">{{$customers->where('created_at','>=',$date_today)->count()}}</span>
 									</div>
 									<!-- /.info-box-content -->
@@ -255,7 +254,7 @@
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> No Risk Stations </b></span>
-										<span class="info-small"> --- </span>
+										<!-- <span class="info-small"> --- </span> -->
 										<span class="info-box-number"> {{$customers->count()}} </span>
 									</div>
 									<!-- /.info-box-content -->
@@ -310,7 +309,7 @@
 							<div class="box box-solid">
 								<div class="box-header">
 
-									<h3 class="box-title">Harvest Window </h3>
+									<h3 class="box-title">Scheduled Management Complied </h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
 
 									<div class="box-tools pull-right">

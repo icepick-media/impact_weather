@@ -1764,7 +1764,7 @@ a:focus {
 .box-header > .box-tools {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 8px;
 }
 .box-header > .box-tools [data-toggle="tooltip"] {
   position: relative;
@@ -2065,7 +2065,7 @@ a:focus {
   max-width: 100%;
 }
 .info-box-content {
-  padding: 0 5px 10px 5px;
+  padding: 0 15px 15px 15px;
   text-align: center;
 }
 .info-box-number {
@@ -5278,9 +5278,9 @@ table.text-center th {
     min-height: 50px;
   }
 
-  .info-box-content{
-    padding: 0 0px 10px 0px;
-  }
+  /* .info-box-content{
+    padding: 0 15px 10px 15px;
+  } */
 
   .paddyGrowth{
     overflow-x: auto;
@@ -5367,7 +5367,7 @@ table.text-center th {
 
 .paddyGrowth ul.paddylist li p{
   transform: rotate(-90deg);
-  margin: 0px 0 10px 0px;
+  margin: 10px 0 10px 0px;
   font-weight: 600;
 }
 
@@ -5491,8 +5491,8 @@ table.text-center th {
     background-color: #49af35 !important
 }
 
-.wrapper-info .box-header {
-  padding-right: 15px;
+.box-header {
+  padding-right: 32px;
 }
 
 .wrapper-info .box-header h3{
