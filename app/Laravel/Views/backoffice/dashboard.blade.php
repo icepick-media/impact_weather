@@ -30,7 +30,7 @@
 </button> -->
 							<div id="map"></div>
 						</div>
-						
+
 					</div>
 
 					<div class="row">
@@ -273,7 +273,7 @@
 							<div class="box box-solid">
 								<div class="box-header">
 
-									<h3 class="box-title">Intervention Advisory Compiled</h3>
+									<h3 class="box-title">Intervention Advisory Complied</h3>
 									<h6 class="date"> Tuesday, 12 February 2019 </h6>
 
 									<div class="box-tools pull-right">
@@ -356,7 +356,7 @@
 										<img src="/dist/img/search.png">
 									</div>
 								</div>
-							
+
 								<div class="box-body">
 									<div class="row">
 										<div class="col-xs-12 text-center">
@@ -370,12 +370,12 @@
 										</div>
 
 									</div>
-							
+
 
 								</div>
-						
+
 							</div>
-					
+
 						</div>
 						<!-- /.col -->
 					</div>
@@ -388,32 +388,38 @@
 
 				<!-- Modal content-->
 				<div class="modal-content">
-				<div class="modal-body riskData">
-					<div class="box-border">
-						<div class="listOfRisk">
-							<h4> Disease Risk </h4>
-							<ul>
-								<li> Rice Blast <span class="red-alert"></span> </li>
-								<li> Sheath Blight <span class="green-alert"></span> </li>
-								<li> Bacterial Blight <span class="green-alert"></span> </li>
-								<li> Brown Spot <span class="yellow-alert"></span> </li>
-								<li> Red Stripe <span class="green-alert"></span> </li>
-								<li> Bacterial Leaf Streak <span class="yellow-alert"></span> </li>
-							</ul>	
-						</div>
-						<div class="listOfRisk">
-						<h4> Pest Risk </h4>
-							<ul>
-								<li> BPH <span class="yellow-alert"></span> </li>
-								<li> Rodents <span class="green-alert"></span> </li>
-								<li> Apple Snail <span class="green-alert"></span> </li>
-								<li> Grasshoppers <span class="red-alert"></span> </li>
-								<li> Stem Borers <span class="green-alert"></span> </li>
-								<li> Slender Rice Bugs <span class="yellow-alert"></span> </li>
-							</ul>
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="model-title station-name-title"></h4>
+					</div>
+					<div class="modal-body riskData">
+						<div class="box-border">
+							<div class="listOfRisk">
+								<h4> Disease Risk </h4>
+								<ul>
+									<li> Rice Blast <span class="red-alert"></span> </li>
+									<li> Sheath Blight <span class="green-alert"></span> </li>
+									<li> Bacterial Blight <span class="green-alert"></span> </li>
+									<li> Brown Spot <span class="yellow-alert"></span> </li>
+									<li> Red Stripe <span class="green-alert"></span> </li>
+									<li> Bacterial Leaf Streak <span class="yellow-alert"></span> </li>
+								</ul>
+							</div>
+							<div class="listOfRisk">
+							<h4> Pest Risk </h4>
+								<ul>
+									<li> BPH <span class="yellow-alert"></span> </li>
+									<li> Rodents <span class="green-alert"></span> </li>
+									<li> Apple Snail <span class="green-alert"></span> </li>
+									<li> Grasshoppers <span class="red-alert"></span> </li>
+									<li> Stem Borers <span class="green-alert"></span> </li>
+									<li> Slender Rice Bugs <span class="yellow-alert"></span> </li>
+								</ul>
+							</div>	
 						</div>	
-					</div>	
-				</div>
+					</div>
 				</div>
 
 			</div>
@@ -430,11 +436,17 @@
 @section('vendor-js')
 <script>
 	// Initialize and add the map
+	var markerArray = [
+		'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+		'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+		'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+	];
+
 	function initMap() {
 		var locations = [
 			$stations = {!! str_replace("'", "\'", json_encode($stations)) !!}
     ];
-				
+
 		var center = {lat: 16.726095, lng: 120.835003};
 
 		var infowindow =  new google.maps.InfoWindow({});
@@ -450,16 +462,19 @@
 					marker = new google.maps.Marker({
 							position: new google.maps.LatLng(userFarms[countMap].farm_display.geo_lat, userFarms[countMap].farm_display.geo_long),
 							map: map,
-							title: locations[0][count].name
-					});	
+							title: locations[0][count].name,
+							icon: markerArray[Math.floor(Math.random() * markerArray.length)],
+					});
 
 					google.maps.event.addListener(marker, 'click', (function (marker, count) {
 						return function () {
 							if(locations[0][count].farm_attached[countMap]){
 								$('#myModal').modal('show');
+								$('.station-name-title').text(locations[0][count].name);
 								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name+'<br/><strong>Farm:</strong> '+locations[0][count].farm_attached[countMap].name);
 							} else {
 								$('#myModal').modal('show');
+								$('.station-name-title').text(locations[0][count].name);
 								infowindow.setContent('<img src="'+locations[0][count].meteogram_image+'"/><br/> <strong>Farmer:</strong> '+locations[0][count].name);
 							}
 							infowindow.open(map, marker);
