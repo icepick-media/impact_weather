@@ -237,7 +237,7 @@
 
 								<div class="dis-table-cell">
 									<span class="info-box-icon">
-                    <img src="/dist/img/bs2.png">
+                    <img src="/dist/img/cs2.png">
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> Borderline Stations </b></span>
@@ -250,7 +250,7 @@
 
 								<div class="dis-table-cell">
 									<span class="info-box-icon">
-                    <img src="/dist/img/ns3.png">
+                    <img src="/dist/img/cs3.png">
                   </span>
 									<div class="info-box-content">
 										<span class="info-box-text">  <b> No Risk Stations </b></span>
